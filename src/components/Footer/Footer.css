@@ -1,0 +1,63 @@
+/*=========================
+  Footer
+ ==========================*/
+
+ .page-footer:before {
+    content: " ";
+    display: block;
+    height: 10px;
+  }
+  
+  .page-footer {
+    color: #379591;
+    font-size: 1rem;
+    padding: 1em 0;
+   
+  }
+
+  .footer-content {
+    display: flex;
+    margin-right: 350px;
+    justify-content: space-between;;
+  }
+
+  .footer-section{
+    text-align: left;
+    padding-left: 40px;
+    
+
+  }
+  
+  .Social {
+    display: flex;
+    gap: 16px; /* Adjust the gap between icons */
+  }
+  
+  .Social a {
+    text-decoration: none;
+    color: rgb(243, 237, 237); /* Adjust the color of the links */
+  }
+  
+  .Social a:hover {
+    color:lightgreen;
+  }
+
+  
+/* Media Queries for Different Screen Sizes */
+@media (max-width: 767px) {
+    .carousel-caption {
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .carousel-caption {
+      font-size: 18px; /* Adjust font size for medium screens */
+    }
+  }
+  
+  @media (min-width: 992px) and (max-width: 1199px) {
+    .carousel-caption {
+      font-size: 24px; /* Adjust font size for large screens */
+    }
+  }

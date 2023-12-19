@@ -1,0 +1,194 @@
+.about-container {
+  font-family: "Roboto", sans-serif;
+  border: 2px solid #2cd032; /* Set border color */
+}
+
+.AboutBred {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+}
+
+
+.skill-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-left: 20px; /* Adjusted padding for smaller screens */
+  padding-right: 10px; /* Adjusted padding for smaller screens */
+}
+
+h2 {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+p.lead {
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.subheading {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.heading-three {
+  padding-right: 300px;
+  padding-left: 60px;
+  justify-content: center;
+  text-align: left;
+}
+
+.Skills-Achieve {
+  background-color:#c8ec89;
+ border-style: groove;
+  border-radius: 20px;
+  padding: 20px 50px; /* Adjust padding based on your preference */
+  margin: 20px 400px;
+  font-family: "Courier New", monospace; /* Use a monospaced font */
+  font-size: 15px; /* Adjust the font size based on your preference */
+  font-weight: bold;
+}
+
+.Happyness {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  text-align: center;
+}
+
+.Hh-xlarge {
+  display: flex;
+  justify-content:center; /* Adjust to your preference */
+  align-items: center; /* Vertically center the content */
+  border-style:dotted;
+  padding: 50px; /* Adjust padding based on your preference */
+  margin: 10px;
+  box-shadow: 1px 5px 10px;
+  background-color: rgb(175, 191, 136);
+  min-width: 120px; /* Set a minimum width to prevent background padding */
+  text-align: center;
+  font-size: 24px; /* Adjust the font size based on your preference */
+  overflow: hidden; /* Prevent content overflow */
+  transition: all 0.3s ease; /* Add a transition for smoother changes */
+  width: 10px;
+}
+
+
+.Button1,
+.Button2 {
+  
+  background-color: rgb(124, 144, 133);
+  padding: 5px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+ ;
+}
+
+.Button1:hover,
+.Button2:hover {
+  background-color: #008000;
+ 
+
+}
+
+.Button1 a,
+.Button2 a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+}
+
+.Button1 FaHome,
+.Button2 FaHtml5 {
+  margin-left: 10px;
+}
+
+
+.GD-media {
+  padding-left: 290px;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
+.list-inline {
+  display: flex;
+  margin: 10px;
+  margin-right: 320px;
+  justify-content: space-between;
+}
+
+.Fields {
+  padding: 20px;
+  margin: 20px;
+  padding-left: 60px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  /* Adjust styles for tablets and smaller screens */
+  .Happyness{
+    padding: 20px;
+    margin: 10px;
+  }
+  .Hh-xlarge {
+    padding: 20px;
+    margin: 10px;
+    
+  }
+
+  .GD-media {
+    padding-left: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .list-inline {
+    margin-right: 20px;
+  }
+
+  .Button1,
+  .Button2 {
+    margin-bottom: 5px; /* Example: Add space between buttons */
+    padding-left: 20px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Adjust styles for mobile devices */
+  .heading-three {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .Skills-Achieve  {
+    justify-content: space-around;
+    padding: 10px 0; /* Adjust margin for smaller screens */    margin: 10px -20px; /* Adjust margin for smaller screens */
+    margin: 20px 10px; /* Adjust margin for smaller screens */
+  }
+
+  .Hh-xlarge {
+    justify-content: space-around;
+    margin: 10px 0; /* Adjust margin for smaller screens */    margin: 10px -20px; /* Adjust margin for smaller screens */
+  }
+
+ 
+
+  .GD-media {
+    padding-left: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .Button1,
+  .Button2 {
+    margin-left: 22px;
+    margin-right: 22px;
+    margin-bottom: 10px; /* Example: Add more space between buttons */
+  }
+}

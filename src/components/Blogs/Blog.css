@@ -1,0 +1,192 @@
+
+.Blog-container {
+  justify-content: space-between;
+  border: 2px solid #2cd032; /* Set border color */
+ 
+}
+
+.Blog-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  padding-left: 10px; /* Adjusted padding for smaller screens */
+  padding-right: 10px; /* Adjusted padding for smaller screens */
+}
+
+/* animation start */
+.Blog-main {
+  opacity: 0;
+  transform: translateX(-20px); /* Start from the left side */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.Blog-main.loaded {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.Blog-One{
+  opacity: 0;
+  transform: translateX(-20px); /* Start from the left side */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+.Blog-two {
+  opacity: 0;
+  transform: translateY(20px); /* Start from the bottom */
+  transition: opacity 2.5s ease-in-out, transform 2.5s ease-in-out;
+}
+
+.Blog-third {
+  opacity: 0;
+  transform: translateX(-20px); /* Start from the left side */
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
+.Blog-main.loaded .Blog-two{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.Blog-main.loaded .Blog-One,
+.Blog-main.loaded .Blog-third {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* animation end */
+
+.BlogBred{
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+}
+
+
+.article-container {
+  /* Add styles for the article container here */
+}
+
+.article-content {
+  margin: 80px;
+
+}
+
+.Blog-One {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* background-color:#a8c7e0; */
+ 
+}
+.imgOne{
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  transition: 1s ease;
+}
+.imgOne:hover{
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  transition: 1s ease;
+}
+
+
+.Blog-two {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  
+  /* background-color: #ffd159; */
+
+}
+
+.imgTwo {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  transition: 1s ease;
+
+}
+
+.imgTwo:hover{
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  transition: 1s ease;
+}
+
+
+.Blog-two .article-content {
+  flex: 1; /* Take up all available space */
+  margin-right: 20px; /* Add some spacing between content and image */
+}
+
+
+.Blog-third {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 50px;
+  /* background-color:#0d0628; */
+}
+
+.imgThird{
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  transition: 1s ease;
+}
+.imgThird:hover{
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  transition: 1s ease;
+}
+
+
+/* Media query for screens with a width between 481 and 768 pixels (tablet) */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .BlogBred {
+    padding-left: 15px; /* Adjust padding for tablets */
+  }
+  .imgOne {
+    width: 80%; /* Adjust image width for tablets in Blog-One */
+  }
+  .imgTwo {
+    width: 50%; /* Adjust image width for tablets in Blog-two */
+  }
+  .imgThird {
+    width: 50%; /* Adjust image width for tablets in Blog-third */
+  }
+  /* Add additional styles for tablets here */
+}
+
+/* Media query for screens with a width greater than 768 pixels (desktop) */
+@media only screen and (min-width: 769px) {
+  .BlogBred {
+    padding-left: 25px; /* Adjust padding for desktops */
+  }
+  .imgOne {
+    width: 90%; /* Adjust image width for desktops in Blog-One */
+  }
+  .imgTwo {
+    width: 60%; /* Adjust image width for desktops in Blog-two */
+  }
+  .imgThird {
+    width: 60%; /* Adjust image width for desktops in Blog-third */
+  }
+  /* Add additional styles for desktops here */
+}

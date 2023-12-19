@@ -1,0 +1,218 @@
+#myCarousel {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* WebDeveloperAnimation.css */
+.WebDeveloperAnimation {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #068e1c;/* Set the initial color for the entire text */
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.WebDeveloperAnimation span {
+  color: #068e1c; /* Set the color for the "Web Developer" part */
+  display: inline-block; /* Allow the width animation to work */
+  transition: color 0.5s ease-in-out; /* Add a smooth color transition effect */
+}
+
+@keyframes typing {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+
+.img-item {
+  position: relative;
+  height: 800px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+}
+
+.webAnime {
+  display: flex;
+  align-items: center;
+  margin-left: 230px;
+
+}
+
+
+.carousel-caption {
+  position:absolute;
+  background: hsla(0, 5%, 4%, 0.5); /* Semi-transparent black background for text readability */
+  color: white;
+  align-items: center;
+  /* margin-bottom: 0rem;  */
+  padding: 25px; /* Add padding for better readability and decoration */
+  border-radius: 20px; /* Add border-radius for rounded corners */
+  box-shadow: 0 0 40px 20px rgba(193, 227, 26, 0.5); /* Add a subtle box shadow for decoration */
+}
+
+.carousel-caption h1 {
+  font-size: 4em;
+  margin-bottom: 10px;
+}
+
+
+.carousel-caption h3 {
+  font-size: 1em;
+  margin-bottom: 20px;
+  font-family: cursive;
+  font-size: 40px;
+  letter-spacing: 3px;
+  
+
+}
+
+.title {
+  font-family: 'roboto', sans-serif;
+  font-size: 5rem;
+  letter-spacing: 0.3rem;
+  z-index: 5;
+  color: transparent;
+  animation: animated-text 20s linear infinite;
+}
+
+@keyframes animated-text {
+  100% {
+    background-position: 200% 0;
+  }
+}
+.one{
+  -webkit-text-stroke: 1px rgba(15, 177, 26, 0.925);
+  background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e9d06cb6-2844-49ed-9bde-23d3364b9fa4);
+  -webkit-background-clip: text;background-clip: text;
+}
+
+
+
+.social-links {
+  margin-top: 20px;
+
+}
+.social-links a {
+  margin-right: 10px;
+}
+
+.icon-style {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 80%;
+  overflow: hidden; /* Ensure the icon stays within the circular container */
+  width: 40px;
+  height: 40px;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.icon-style:hover {
+  color: rgb(32, 235, 32); /* Change color on hover */
+}
+
+
+
+
+
+
+/*Button*/
+.download-button{
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px; 
+  font-size: 16px;
+  border-color: rgb(133, 93, 138);
+  cursor: pointer;
+  border-radius: 5px; /* Add rounded corners */
+  transition: background-color 0.3s ease; /* Add smooth transition */
+}
+.download-button:hover{
+  background-color: rgb(4, 77, 9);
+
+}
+
+.hire-button {
+  position: relative;
+  background-color: rgb(8, 8, 7);
+  color: white;
+  padding: 10px 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 2px solid rgb(133, 93, 138);
+  cursor: pointer;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  z-index: 1; /* Ensure the text is above the pseudo-element */
+}
+
+.hire-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  background: green; /* Color to animate to on hover */
+  height: 100%;
+  transition: height 0.3s ease, transform 0.3s ease;
+  transform-origin: bottom;
+  z-index: -1; /* Place the pseudo-element below the text */
+}
+
+.hire-button:hover:before {
+  height: 0;
+  transform: scaleY(-1);
+}
+
+
+
+
+
+
+/* Add the following CSS for mobile and tablet screens */
+
+@media only screen and (max-width: 767px) {
+  .img-item {
+    height: 300px; /* Adjust the height for smaller screens */
+  }
+  .webAnime{
+    display: none;
+   
+   }
+  .carousel-caption {
+    padding: 50px; /* Adjust padding for better readability on smaller screens */
+    margin-bottom: 0px; /* Adjust margin for better spacing */
+  }
+
+  .carousel-caption h1 {
+    font-size: 2.5em; /* Adjust font size for better readability on smaller screens */
+  }
+
+  .carousel-caption h3 {
+    font-size: 1em; /* Adjust font size for better readability on smaller screens */
+  }
+}
+
+/* Add additional media queries as needed for larger tablet screens */
+
+/* Example: Larger tablets (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .img-item {
+    height: 400px; /* Adjust the height for larger tablet screens */
+  }
+ 
+} 

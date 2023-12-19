@@ -1,0 +1,86 @@
+/* Default styles for all screen sizes */
+
+.contact-container {
+  justify-content: space-between;
+  border: 2px solid #2cd032; /* Set border color */
+}
+
+.contactBred {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 25px;
+}
+
+.Contact-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px; /* Adjusted padding for smaller screens */
+  padding-right: 10px; /* Adjusted padding for smaller screens */
+}
+
+/* glass-effect */
+.GetinTouch {
+  color: green;
+  align-items: center;
+}
+
+.glass-container {
+  max-width: 1000px;
+  margin: 50px;
+  padding: 40px;
+  border-radius: 10px;
+  margin-left: 450px;
+  background-image: url('/assets/Caro1.jpg');
+  background-size: cover;
+  will-change: opacity, transform;/* React Spring Animation Styles */
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1); /* Background color with transparency */
+  border-radius: 8px; /* Adjust border-radius for rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+  width: 600px; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+.sendButton {
+  text-align: center;
+}
+
+#message {
+  padding: 20px;
+}
+
+.glass-effect-input {
+  background: rgba(255, 255, 255, 0.1); /* Adjust the alpha channel for transparency */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  color: #fff; /* Adjust text color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+}
+
+
+
+.error-message {
+  color: red;
+  margin-top: 5px; /* Optional: Add some spacing between the input and the error message */
+}
+
+
+/* Media query for screens with a width between 450 and 768 pixels (mobile and tablet) */
+@media screen and (min-width:450px) and (max-width: 768px) {
+  .glass-container {
+   
+    margin-left: 20px; /* Center the container horizontally */
+    margin-right: 20px;
+    padding-left: 20px;
+  }
+  .glass-effect {
+    width: 365px;
+  }
+
+}
