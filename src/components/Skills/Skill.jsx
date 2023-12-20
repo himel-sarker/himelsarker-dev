@@ -38,8 +38,8 @@ function Skill() {
     // Define the target values
     const targetPartnersCount = 11;
     const targetProjectsDoneCount = 20;
-    const targetHappyClientsCount = 30;
-    const targetMeetingsCount = 50;
+    const targetHappyClientsCount = 40;
+    const targetMeetingsCount = 80;
 
     // Set the interval and increment for each counter
     const interval = 2; // milliseconds
@@ -83,7 +83,7 @@ function Skill() {
             color: "green",
             fontWeight: "bold",
           }}
-          href="/"
+          href="/home"
         >
           <FaHome className="mr-0.5" />
           HOME

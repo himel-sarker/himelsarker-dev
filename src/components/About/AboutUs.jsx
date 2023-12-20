@@ -4,6 +4,7 @@ import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { FaHome, FaInfo } from "react-icons/fa";
 
 const AboutUs = () => {
+  
   return (
     <div className="about-container ">
       <Breadcrumbs className="AboutBred" aria-label="breadcrumb">
@@ -15,7 +16,7 @@ const AboutUs = () => {
             color: "green",
             fontWeight: "bold",
           }}
-          href="/"
+          href="/home"
         >
           <FaHome className="mr-0.5" />
           HOME

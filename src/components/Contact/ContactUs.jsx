@@ -121,7 +121,7 @@ const ContactUs = () => {
             color: "green",
             fontWeight: "bold",
           }}
-          href="/"
+          href="/home"
         >
           <FaHome className="mr-0.5" />
           HOME
@@ -160,7 +160,7 @@ const ContactUs = () => {
             color: "green",
             fontWeight: "bold",
           }}
-          href="/"
+          href="/projects"
         >
           <FaProjectDiagram className="mr-0.5" />
           Projects
@@ -173,7 +173,7 @@ const ContactUs = () => {
             color: showContent ? "lightgreen" : "green",
             fontWeight: "bold",
           }}
-          href="/"
+          href="/blogs"
           onClick={handleLinkClick}
         >
           <FaEnvelope className="mr-0.5" />

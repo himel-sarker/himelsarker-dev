@@ -55,7 +55,7 @@ const Blog = () => {
               color: "green",
               fontWeight: "bold",
             }}
-            href="/"
+            href="/home"
           >
             <FaHome className="mr-0.5" />
             HOME

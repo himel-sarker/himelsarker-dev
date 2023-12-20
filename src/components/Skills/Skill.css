@@ -78,6 +78,8 @@ p.lead {
 
 .Button1,
 .Button2 {
+  justify-content: center; /* Adjust to your preference */
+  align-items: center; /* Vertically center the content */
   background-color: rgb(124, 144, 133);
   padding: 5px 25px;
   border: none;
@@ -131,24 +133,27 @@ p.lead {
   .heading-three {
     padding-right: 50px;
     padding-left: 30px;
+  
   }
 
   .Happyness {
+
     display: grid;
-    margin: 0px;
+    margin: 50px;
     grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
     gap: 2px; /* Adjust the gap between grid items as needed */
   }
 
   .section1 {
     text-align: center;
-    margin: 50px;
-    padding: 20px;
+    margin: 20px;
+    padding: 10px;
+   
   }
 
   .Skills-Achieve {
     padding: 1px 0; /* Adjust margin for smaller screens */
-    margin: 30px 25px; /* Adjust margin for smaller screens */
+    margin: 40px 60px; /* Adjust margin for smaller screens */
   }
 
   .Hh-xlarge {
@@ -159,11 +164,13 @@ p.lead {
   .GD-media {
     padding-left: 0px;
     margin-left: 0px;
+  
+
   }
 
   .Button1,
   .Button2 {
-    margin-left: 10px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 15px;
   }
 }
