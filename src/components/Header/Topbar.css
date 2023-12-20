@@ -23,24 +23,17 @@
   color: rgb(200, 236, 137); /* Change color to green */
 }
 
-
- 
-
-
-
-
 /*-----------Responsive Moode..............*/
 
-
-    /*-----------Responsive Mode for smaller screens (up to 768px)-----------*/
-    @media screen and (max-width: 768px) {
-      .Topbar {
-        display: none !important; /* Hide the entire Topbar on smaller screens */
-      }
-  
-    .social-icons,.sp-contact-info {
-      padding-left: 1px; /* Remove left padding on smaller screens */
-      justify-content: center; /* Center items in the row */
-    }
+/*-----------Responsive Mode for smaller screens (up to 768px)-----------*/
+@media screen and (max-width: 768px) {
+  .Topbar {
+    display: none !important; /* Hide the entire Topbar on smaller screens */
   }
-  
+
+  .social-icons,
+  .sp-contact-info {
+    padding-left: 1px; /* Remove left padding on smaller screens */
+    justify-content: center; /* Center items in the row */
+  }
+}

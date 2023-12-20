@@ -5,12 +5,11 @@
   overflow: hidden;
 }
 
-
 /* WebDeveloperAnimation.css */
 .WebDeveloperAnimation {
   font-size: 1.5em;
   font-weight: bold;
-  color: #068e1c;/* Set the initial color for the entire text */
+  color: #068e1c; /* Set the initial color for the entire text */
   overflow: hidden;
   white-space: nowrap;
 }
@@ -30,28 +29,28 @@
   }
 }
 
-
-
 .img-item {
   position: relative;
   height: 800px;
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
- 
 }
 
 .webAnime {
   display: flex;
   align-items: center;
   margin-left: 230px;
-
 }
 
-
 .carousel-caption {
-  position:absolute;
-  background: hsla(0, 5%, 4%, 0.5); /* Semi-transparent black background for text readability */
+  position: absolute;
+  background: hsla(
+    0,
+    5%,
+    4%,
+    0.5
+  ); /* Semi-transparent black background for text readability */
   color: white;
   align-items: center;
   /* margin-bottom: 0rem;  */
@@ -65,19 +64,16 @@
   margin-bottom: 10px;
 }
 
-
 .carousel-caption h3 {
   font-size: 1em;
   margin-bottom: 20px;
   font-family: cursive;
   font-size: 40px;
   letter-spacing: 3px;
-  
-
 }
 
 .title {
-  font-family: 'roboto', sans-serif;
+  font-family: "roboto", sans-serif;
   font-size: 5rem;
   letter-spacing: 0.3rem;
   z-index: 5;
@@ -90,17 +86,15 @@
     background-position: 200% 0;
   }
 }
-.one{
+.one {
   -webkit-text-stroke: 1px rgba(15, 177, 26, 0.925);
   background: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/e9d06cb6-2844-49ed-9bde-23d3364b9fa4);
-  -webkit-background-clip: text;background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
 }
-
-
 
 .social-links {
   margin-top: 20px;
-
 }
 .social-links a {
   margin-right: 10px;
@@ -122,26 +116,20 @@
   color: rgb(32, 235, 32); /* Change color on hover */
 }
 
-
-
-
-
-
 /*Button*/
-.download-button{
+.download-button {
   background-color: green;
   color: white;
   padding: 10px 20px;
-  margin-right: 10px; 
+  margin-right: 10px;
   font-size: 16px;
   border-color: rgb(133, 93, 138);
   cursor: pointer;
   border-radius: 5px; /* Add rounded corners */
   transition: background-color 0.3s ease; /* Add smooth transition */
 }
-.download-button:hover{
+.download-button:hover {
   background-color: rgb(4, 77, 9);
-
 }
 
 .hire-button {
@@ -178,21 +166,15 @@
   transform: scaleY(-1);
 }
 
-
-
-
-
-
 /* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
 
-@media screen and (min-width:325px) and (max-width: 768px) {
+@media screen and (min-width: 325px) and (max-width: 768px) {
   .img-item {
     height: 400px; /* Adjust the height for smaller screens */
   }
-  .webAnime{
+  .webAnime {
     display: none;
-   
-   }
+  }
   .carousel-caption {
     padding: 50px; /* Adjust padding for better readability on smaller screens */
     margin-bottom: 0px; /* Adjust margin for better spacing */
@@ -207,12 +189,11 @@
   }
 }
 
-.download-button{
+.download-button {
   padding: 10px 20px;
-  margin-right: 10px; 
+  margin-right: 10px;
   font-size: 16px;
   margin-bottom: 5px;
- 
 }
 
 /* Add additional media queries as needed for larger tablet screens */
@@ -222,5 +203,4 @@
   .img-item {
     height: 400px; /* Adjust the height for larger tablet screens */
   }
- 
-} 
+}

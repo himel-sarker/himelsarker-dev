@@ -100,7 +100,6 @@ p.lead {
   }
 }
 
-
 /* Responsive Mode for screens wider than or equal to 992px (desktops) */
 @media (min-width: 992px) {
   .Details-about {

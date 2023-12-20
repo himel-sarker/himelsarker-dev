@@ -36,7 +36,9 @@ const AboutUs = () => {
       </Breadcrumbs>
 
       <div className="My-about ">
-      <h1><strong style={{ color: "green" }}>About</strong></h1>
+        <h1>
+          <strong style={{ color: "green" }}>About</strong>
+        </h1>
         <br />
         <p>
           Hi, I'm Himel Sarker.the author and creator of this portfolio. I
@@ -48,7 +50,7 @@ const AboutUs = () => {
 
       <div className="Details-about">
         <h1 className="mb-0">
-            Himel&nbsp;<strong style={{ color: "green" }}>Sarker</strong>
+          Himel&nbsp;<strong style={{ color: "green" }}>Sarker</strong>
         </h1>
         <div className="subheading mb-5">
           Progoti Shoroni, K/A Joar Shara Baza, Kuril, Bashundhara, Dhaka, 1229

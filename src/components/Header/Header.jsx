@@ -31,14 +31,14 @@ function Header() {
   // Define a function to handle smooth scroll
   const handleSmoothScroll = (targetId) => {
     // console.log(`Scrolling to: ${targetId}`);
-    
+
     scroller.scrollTo(targetId, {
       duration: 700,
       delay: 0,
       smooth: "easeInOutCubic",
       offset: -60,
     });
-  
+
     setIsOpen(false); // Close the Navbar when a link is clicked
   };
 

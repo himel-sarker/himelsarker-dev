@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 // WebDeveloperAnimation component
 const WebDeveloperAnimation = () => {
   const words = ["Front-end Developer", "ReactJs Developer"]; // Add more words as needed
-  const [animatedText, setAnimatedText] = useState('');
+  const [animatedText, setAnimatedText] = useState("");
   const [isIncreasing, setIsIncreasing] = useState(true);
 
   useEffect(() => {
@@ -90,9 +89,6 @@ const WebDeveloperAnimation = () => {
   );
 };
 
-
-
-
 // CarouselFun component
 const CarouselFun = () => {
   const items = [
@@ -100,12 +96,11 @@ const CarouselFun = () => {
       src: "/assets/Carousel.png",
       altText: "Himel Sarker",
       caption: (
-        <p className='webAnime'>
+        <p className="webAnime">
           I'm a&nbsp;
           <WebDeveloperAnimation />
         </p>
       ),
-      
     },
     // Add more items if needed
   ];
@@ -113,7 +108,12 @@ const CarouselFun = () => {
   // SocialLink component
   const SocialLink = ({ href, icon }) => {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className="icon-style">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="icon-style"
+      >
         {icon}
       </a>
     );
@@ -132,15 +132,35 @@ const CarouselFun = () => {
             <h3>{item.caption}</h3>
 
             <div className="social-links">
-              <SocialLink href="https://www.linkedin.com/in/himel-sarker-7738b9180/" icon={<LinkedInIcon fontSize="large" />} />
-              <SocialLink href="https://github.com/Himel-Sarker1" icon={<GitHubIcon fontSize="large" />} />
-              <SocialLink href="https://instagram.com/himel_sarker1" icon={<InstagramIcon fontSize="large" />} />
+              <SocialLink
+                href="https://www.linkedin.com/in/himel-sarker-7738b9180/"
+                icon={<LinkedInIcon fontSize="large" />}
+              />
+              <SocialLink
+                href="https://github.com/Himel-Sarker1"
+                icon={<GitHubIcon fontSize="large" />}
+              />
+              <SocialLink
+                href="https://instagram.com/himel_sarker1"
+                icon={<InstagramIcon fontSize="large" />}
+              />
             </div>
             <br />
-            <button className="download-button" onClick={() => (window.location.href = "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")}>
+            <button
+              className="download-button"
+              onClick={() =>
+                (window.location.href =
+                  "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")
+              }
+            >
               Download CV
             </button>
-            <button className="hire-button" onClick={() => (window.location.href = "mailto:himelsarker85@gmail.com")}>
+            <button
+              className="hire-button"
+              onClick={() =>
+                (window.location.href = "mailto:himelsarker85@gmail.com")
+              }
+            >
               Hire me
             </button>
           </div>

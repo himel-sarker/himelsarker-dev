@@ -24,7 +24,7 @@ function Topbar() {
             </li>
 
             <li className="linkedin">
-              <LinkedInIcon style={{  fontSize: "30px" }} />
+              <LinkedInIcon style={{ fontSize: "30px" }} />
               <a
                 href="https://www.linkedin.com/in/himel-sarker-7738b9180/"
                 aria-label="LinkedIn"
@@ -34,7 +34,7 @@ function Topbar() {
             </li>
 
             <li className="instagram">
-              <InstagramIcon style={{  fontSize: "30px" }} />
+              <InstagramIcon style={{ fontSize: "30px" }} />
               <a href="https://www.instagram.com/himel_sarker1/">Instagram</a>
             </li>
           </ul>

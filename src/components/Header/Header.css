@@ -1,14 +1,11 @@
-
-.Flex-Nav  {
-  
+.Flex-Nav {
   border: 3px solid green;
 }
 
-.nav-Img:hover{
- box-shadow: 0.5px 0.5px 5px 5px  green ;
- transform:scale(1.2);
+.nav-Img:hover {
+  box-shadow: 0.5px 0.5px 5px 5px green;
+  transform: scale(1.2);
 }
-
 
 /*========================
  Header
@@ -16,64 +13,59 @@
 
 .clearfix:before,
 .clearfix:after {
- content: " ";
- display: table;
+  content: " ";
+  display: table;
 }
 .clearfix:after {
- clear: both;
+  clear: both;
 }
 
- .text-secondary {
+.text-secondary {
   font-size: 1.5rem;
 }
 
-
-.page-header{
+.page-header {
   width: 100%;
   margin-right: 0; /* Remove right margin */
-  margin-left: 0;  /* Remove left margin */
-   font-family: "Economica", sans-serif;
+  margin-left: 0; /* Remove left margin */
+  font-family: "Economica", sans-serif;
   text-transform: uppercase;
   font-weight: bold;
-
 }
 .page-header .nav-link {
- color: #474747;
- transition: color 0.3s ease; /* Add a smooth transition effect */
+  color: #474747;
+  transition: color 0.3s ease; /* Add a smooth transition effect */
 }
 
 .page-header .nav-link:hover {
- color:  rgb(200, 236, 137) /* Change the color to the desired hover color */
+  color: rgb(200, 236, 137); /* Change the color to the desired hover color */
 }
 
- .page-header {
-     font-family: "Pacifico";
-     font-size: 1em;
- } 
+.page-header {
+  font-family: "Pacifico";
+  font-size: 1em;
+}
 
- .page-header nav {
-     font-family: "Economica", sans-serif;
-     text-transform: uppercase;
- }
+.page-header nav {
+  font-family: "Economica", sans-serif;
+  text-transform: uppercase;
+}
 
- .page-header nav li {
-     margin-block-end: 1.5rem;
-     margin-left: 2rem;
-     margin-bottom:5px; 
- }
+.page-header nav li {
+  margin-block-end: 1.5rem;
+  margin-left: 2rem;
+  margin-bottom: 5px;
+}
 
- .page-header nav li em {
-     display: block;
-     color: green;
-     font-size: 1em; 
-    
- }
+.page-header nav li em {
+  display: block;
+  color: green;
+  font-size: 1em;
+}
 
- .NavCustomize {
+.NavCustomize {
   margin-left: 550px;
- 
 }
-
 
 /* Media Queries for Different Screen Sizes */
 @media (max-width: 767px) {
@@ -81,8 +73,8 @@
     font-size: 14px; /* Adjust font size for smaller screens */
     padding: 10px; /* Adjust padding for smaller screens */
   }
-  .NavCustomize{
-   margin-left: 0px;
+  .NavCustomize {
+    margin-left: 0px;
   }
 }
 

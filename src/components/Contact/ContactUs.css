@@ -32,9 +32,9 @@
   padding: 10px;
   border-radius: 10px;
   margin-left: 450px;
-  background-image: url('/assets/Caro1.jpg');
+  background-image: url("/assets/Caro1.jpg");
   background-size: cover;
-  will-change: opacity, transform;/* React Spring Animation Styles */
+  will-change: opacity, transform; /* React Spring Animation Styles */
 }
 
 .glass-effect {
@@ -55,7 +55,12 @@
 }
 
 .glass-effect-input {
-  background: rgba(255, 255, 255, 0.1); /* Adjust the alpha channel for transparency */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Adjust the alpha channel for transparency */
   border: none;
   border-radius: 5px;
   padding: 10px;
@@ -63,24 +68,19 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
 }
 
-
-
 .error-message {
   color: red;
   margin-top: 5px; /* Optional: Add some spacing between the input and the error message */
 }
 
-
 /* Media query for screens with a width between 450 and 768 pixels (mobile and tablet) */
-@media screen and (min-width:325px) and (max-width: 768px) {
+@media screen and (min-width: 325px) and (max-width: 768px) {
   .glass-container {
     margin-left: 10px; /* Center the container horizontally */
     margin-right: 10px;
     padding-left: 0px;
-  
   }
   .glass-effect {
     width: 320px;
   }
-
 }

@@ -39,7 +39,7 @@ function Footer() {
               </address>
               <h4 style={{ color: "green" }}>Disclaimer</h4>
               <p>
-                <span style={{ color:"#38807",fontWeight: "bold" }}>
+                <span style={{ color: "#38807", fontWeight: "bold" }}>
                   Opinions expressed here are my own.
                 </span>
               </p>

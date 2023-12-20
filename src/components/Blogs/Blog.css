@@ -1,8 +1,6 @@
-
 .Blog-container {
   justify-content: space-between;
   border: 2px solid #2cd032; /* Set border color */
- 
 }
 
 .Blog-text {
@@ -31,7 +29,7 @@
   transform: translateX(0);
 }
 
-.Blog-One{
+.Blog-One {
   opacity: 0;
   transform: translateX(-20px); /* Start from the left side */
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -48,8 +46,7 @@
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-
-.Blog-main.loaded .Blog-two{
+.Blog-main.loaded .Blog-two {
   opacity: 1;
   transform: translateY(0);
 }
@@ -60,29 +57,25 @@
   transform: translateX(0);
 }
 
-
 /* animation end */
 
-.BlogBred{
+.BlogBred {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 25px;
 }
 
-
 .article-content {
   margin: 80px;
-
 }
 
 .Blog-One {
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
 }
-.imgOne{
+.imgOne {
   max-width: 100%;
   display: block;
   margin-left: auto;
@@ -90,20 +83,17 @@
   width: 90%;
   transition: 1s ease;
 }
-.imgOne:hover{
+.imgOne:hover {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
   transition: 1s ease;
 }
 
-
 .Blog-two {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-
 }
 
 .imgTwo {
@@ -113,22 +103,19 @@
   margin-right: auto;
   width: 60%;
   transition: 1s ease;
-
 }
 
-.imgTwo:hover{
+.imgTwo:hover {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
   transition: 1s ease;
 }
 
-
 .Blog-two .article-content {
   flex: 1; /* Take up all available space */
   margin-right: 20px; /* Add some spacing between content and image */
 }
-
 
 .Blog-third {
   display: flex;
@@ -136,7 +123,7 @@
   align-items: center;
 }
 
-.imgThird{
+.imgThird {
   max-width: 100%;
   display: block;
   margin-left: auto;
@@ -144,13 +131,12 @@
   width: 60%;
   transition: 1s ease;
 }
-.imgThird:hover{
+.imgThird:hover {
   -webkit-transform: scale(0.8);
   -ms-transform: scale(0.8);
   transform: scale(0.8);
   transition: 1s ease;
 }
-
 
 /* Media query for screens with a width between 481 and 768 pixels (tablet) */
 @media only screen and (min-width: 325px) and (max-width: 768px) {

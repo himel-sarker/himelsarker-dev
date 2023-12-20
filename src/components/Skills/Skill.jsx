@@ -116,13 +116,12 @@ function Skill() {
         </Link>
       </Breadcrumbs>
 
- 
       <div className="skill-name">
-          <h1 className="skill-text">
-            My&nbsp; <strong style={{ color: "green" }}> Skills</strong>
-          </h1>
-        </div>
-        <Typography variant="h2" className="heading-three">
+        <h1 className="skill-text">
+          My&nbsp; <strong style={{ color: "green" }}> Skills</strong>
+        </h1>
+      </div>
+      <Typography variant="h2" className="heading-three">
         <div className="subheading mb-3">Programming Languages &amp; Tools</div>
         <ul className="subheading mb-2">
           <li>HTML5</li>
@@ -208,7 +207,9 @@ function Skill() {
           <li className="Button1">
             <Button
               component="a"
-              onClick={() => (window.location.href = "https://github.com/Himel-Sarker1")}
+              onClick={() =>
+                (window.location.href = "https://github.com/Himel-Sarker1")
+              }
               target="_blank"
             >
               GitHub
@@ -218,8 +219,10 @@ function Skill() {
           <li className="Button2">
             <Button
               component="a"
-              onClick={() => (window.location.href = "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")}
-
+              onClick={() =>
+                (window.location.href =
+                  "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")
+              }
               target="_blank"
             >
               Download

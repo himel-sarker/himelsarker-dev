@@ -10,7 +10,6 @@
   padding-left: 25px;
 }
 
-
 .skill-text {
   display: flex;
   justify-content: center;
@@ -43,7 +42,7 @@ p.lead {
 }
 
 .Skills-Achieve {
-  background-color:#c8ec89;
+  background-color: #c8ec89;
   border-style: groove;
   border-radius: 20px;
   padding: 5px 5px; /* Adjust padding based on your preference */
@@ -62,9 +61,9 @@ p.lead {
 
 .Hh-xlarge {
   display: flex;
-  justify-content:center; /* Adjust to your preference */
+  justify-content: center; /* Adjust to your preference */
   align-items: center; /* Vertically center the content */
-  border-style:dotted;
+  border-style: dotted;
   padding: 50px; /* Adjust padding based on your preference */
   margin: 10px;
   box-shadow: 1px 5px 10px;
@@ -76,7 +75,6 @@ p.lead {
   transition: all 0.3s ease; /* Add a transition for smoother changes */
   width: 10px;
 }
-
 
 .Button1,
 .Button2 {
@@ -92,8 +90,6 @@ p.lead {
 .Button1:hover,
 .Button2:hover {
   background-color: #008000;
- 
-
 }
 
 .Button1 a,
@@ -108,7 +104,6 @@ p.lead {
 .Button2 FaHtml5 {
   margin-left: 10px;
 }
-
 
 .GD-media {
   padding-left: 290px;
@@ -129,12 +124,9 @@ p.lead {
   padding-left: 60px;
 }
 
-
-
 /* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
 
-@media screen and (min-width:325px) and (max-width: 768px) {
-
+@media screen and (min-width: 325px) and (max-width: 768px) {
   /* Adjust styles for mobile devices */
   .heading-three {
     padding-right: 50px;
@@ -147,28 +139,26 @@ p.lead {
     grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
     gap: 2px; /* Adjust the gap between grid items as needed */
   }
-  
+
   .section1 {
     text-align: center;
     margin: 50px;
     padding: 20px;
   }
-  
-  .Skills-Achieve  {
-    padding: 1px 0; /* Adjust margin for smaller screens */   
-    margin: 30px 25px;/* Adjust margin for smaller screens */
-  
+
+  .Skills-Achieve {
+    padding: 1px 0; /* Adjust margin for smaller screens */
+    margin: 30px 25px; /* Adjust margin for smaller screens */
   }
 
   .Hh-xlarge {
-    justify-content:flex;
+    justify-content: flex;
     align-items: center;
-    }
+  }
 
   .GD-media {
     padding-left: 0px;
     margin-left: 0px;
-
   }
 
   .Button1,
@@ -177,4 +167,3 @@ p.lead {
     margin-right: 2px;
   }
 }
-

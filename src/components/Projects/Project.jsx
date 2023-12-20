@@ -63,7 +63,7 @@ const MasonryImageList = () => {
       "Flight-Booking": "https://himel-sarker.github.io/Flight-Booking/",
       "TO-DO-List": "https://himel-sarker.github.io/TO-DO-List/",
       "Airtravel-Site": "https://himel-sarker.github.io/Airtravel-Site/",
-      "Chinese-restaurant": "https://himel-sarker.github.io/Mod5_Assignmnet/"
+      "Chinese-restaurant": "https://himel-sarker.github.io/Mod5_Assignmnet/",
     };
 
     const liveDemoUrl = liveDemoUrls[title];
@@ -89,10 +89,10 @@ const MasonryImageList = () => {
         cols={4}
         gap={6}
         sx={{
-          '@media (max-width: 481px)': {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(1, 1fr)',
-            gap: '2px',
+          "@media (max-width: 481px)": {
+            display: "grid",
+            gridTemplateColumns: "repeat(1, 1fr)",
+            gap: "2px",
           },
         }}
       >
@@ -108,7 +108,10 @@ const MasonryImageList = () => {
             />
             <div className="image-item-overlay">
               {item.title}&nbsp;
-              <button className="buttonLive" onClick={() => handleButtonClick(item.title)}>
+              <button
+                className="buttonLive"
+                onClick={() => handleButtonClick(item.title)}
+              >
                 Live Demo
               </button>
             </div>
@@ -118,7 +121,6 @@ const MasonryImageList = () => {
     </Box>
   );
 };
-
 
 const Project = () => {
   return (
