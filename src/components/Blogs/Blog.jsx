@@ -159,7 +159,8 @@ const Blog = () => {
                   null and undefined? Ans:-usually we can make 7 to 8 ways. the
                   differences are given below let maria;//no value has been set&nbsp;
                   <button
-                    to="https://medium.com/@himelsarker85/10-javascript-interview-questions-ed65603046fc"
+                    onClick={() => (window.location.href = "https://medium.com/@himelsarker85/10-javascript-interview-questions-ed65603046fc")}
+                
                     target="_blank"
                     rel="noopener noreferrer"
                   
@@ -198,7 +199,8 @@ const Blog = () => {
                  programming language that allows you to implement complex features on web pages. JavaScript can update
                   and change both HTML and CSS. JavaScript can calculate, manipulate and validate data.&nbsp;
                   <button
-                    to="https://medium.com/@himelsarker85/some-important-method-of-javascript-7db5c95bd9e4"
+                   onClick={() => (window.location.href = "https://medium.com/@himelsarker85/some-important-method-of-javascript-7db5c95bd9e4")}
+              
                     target="_blank"
                     rel="noopener noreferrer"
                    
@@ -241,7 +243,8 @@ const Blog = () => {
                   components-based architecture. It’s a virtual DOM that depends
                   on elements’ behaviors.&nbsp;
                   <button
-                    to="https://medium.com/@himelsarker85/introduction-to-react-js-2624f8bbd3c7"
+                     onClick={() => (window.location.href = "https://medium.com/@himelsarker85/introduction-to-react-js-2624f8bbd3c7")}
+                    
                     target="_blank"
                     rel="noopener noreferrer"
                   

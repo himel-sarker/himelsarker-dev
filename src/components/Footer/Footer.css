@@ -2,59 +2,54 @@
   Footer
  ==========================*/
 
- .page-footer:before {
-    content: " ";
-    display: block;
-    height: 10px;
-  }
-  
-  .page-footer {
-    color: #379591;
-    font-size: 1rem;
-    padding: 1em 0;
-   
-  }
+.page-footer:before {
+  content: " ";
+  display: block;
+  height: 10px;
+}
 
-  .footer-content {
-    display: flex;
-    margin-right: 370px;
-    justify-content: space-between;;
-  }
+.page-footer {
+  color: #379591;
+  font-size: 1rem;
+  padding: 1em 0;
+}
 
-  .footer-section{
-    text-align: left;
-    padding-left: 32px;
-  }
-  
-  .Social {
-    display: flex;
-    gap: 16px; /* Adjust the gap between icons */
-  }
-  
-  .Social a {
-    text-decoration: none;
-    color: rgb(243, 237, 237); /* Adjust the color of the links */
-  }
-  
-  .Social a:hover {
-    color:lightgreen;
-  }
+.footer-content {
+  display: flex;
+  margin-right: 370px;
+  justify-content: space-between;
+}
 
-  
+.footer-section {
+  text-align: left;
+  padding-left: 32px;
+}
+
+.Social {
+  display: flex;
+  gap: 16px; /* Adjust the gap between icons */
+}
+
+.Social a {
+  text-decoration: none;
+  color: rgb(243, 237, 237); /* Adjust the color of the links */
+}
+
+.Social a:hover {
+  color: lightgreen;
+}
 
 /* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
 
 @media only screen and (min-width: 325px) and (max-width: 768px) {
   .footer-content {
-
-    margin-right: 150px;
+    margin-right: 146px;
   }
 
- 
-  .footer-section{
+  .footer-section {
     text-align: left;
-  margin-right: 0px;
-    padding-left: 5px; *
+    margin-right: 0px;
+    padding-left: 2px;
   }
 
   .Social {

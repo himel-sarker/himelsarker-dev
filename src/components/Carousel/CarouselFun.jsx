@@ -137,7 +137,7 @@ const CarouselFun = () => {
               <SocialLink href="https://instagram.com/himel_sarker1" icon={<InstagramIcon fontSize="large" />} />
             </div>
             <br />
-            <button className="download-button" onClick={() => (window.location.href = "https://doc-04-7g-prod-00-apps-viewer.googleusercontent.com/viewer2/prod-00/pdf/0p6cc8rqb9gidhre465876s7r0ip38rd/26ofs0t5sig5j9te9ervtvi0g8vidki3/1703026125000/3/114694339589317451324/APznzaaw0gsix3eLl6dIm0T47j400CNbuv8hhits3y4YXxs0xT7Hf9Uq66Msl4N4FHUJZhaZu4DkLO0adxEHOCKec3zHea7ooTAow3ofpwV1DhM-2dchrQijW1ksmR1ZI-6miziDK6OXZc6IHFKrREHW_dWPNk_JYNp76BiOk1ADrOjtjbvsDOdZynU9J6V_FRD2SHmhPVJ-5fsjZD8XaBVHRTKnp1sWJaGTyjuyXP9yVjmUJcHeOxyx8YZyg_ZOsvhOBXZ-f03KHcbRVkhX8cmrNNotTsRuNJrouYeIAaxC1yeF4mXXvP-SCBMeBMROZolISsoKC0hleL4uVvrWB0EmIIyRxpCgDnsugujmfzCfqnDYPDbt18XACf6T33aOdK6ZXYosSx319x8NWwWeteH8qFI4exKWNKje2lfVp-nPXXhS-ddsi5g=?authuser=1&nonce=2i2r2udtv1lhs&user=114694339589317451324&hash=9c5h0uiocb26m8934uqehhniilqlb20t")}>
+            <button className="download-button" onClick={() => (window.location.href = "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")}>
               Download CV
             </button>
             <button className="hire-button" onClick={() => (window.location.href = "mailto:himelsarker85@gmail.com")}>

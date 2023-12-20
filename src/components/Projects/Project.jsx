@@ -89,7 +89,7 @@ const MasonryImageList = () => {
         cols={4}
         gap={6}
         sx={{
-          '@media (max-width: 330px)': {
+          '@media (max-width: 481px)': {
             display: 'grid',
             gridTemplateColumns: 'repeat(1, 1fr)',
             gap: '2px',
@@ -124,7 +124,58 @@ const Project = () => {
   return (
     <div className="project-container">
       <Breadcrumbs className="project-breadcrumbs" aria-label="breadcrumb">
-        {/* ... (unchanged) */}
+        <Link
+          underline="hover"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            color: "green",
+            fontWeight: "bold",
+          }}
+          href="/"
+        >
+          <FaHome className="mr-0.5" />
+          HOME
+        </Link>
+        <Link
+          underline="hover"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            color: "green",
+            fontWeight: "bold",
+          }}
+          href="/about"
+        >
+          <FaInfo className="mr-0.5" />
+          About
+        </Link>
+        <Link
+          underline="hover"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            color: "green",
+            fontWeight: "bold",
+          }}
+          href="/skills"
+        >
+          <FaTools className="mr-0.5" />
+          Skills
+        </Link>
+        <Link
+          underline="hover"
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            color: "lightgreen",
+            fontWeight: "bold",
+          }}
+          href="/projects"
+        >
+          <FaProjectDiagram className="mr-0.5" />
+          Projects
+        </Link>
       </Breadcrumbs>
       <div className="project-content">
         <div className="project-image">

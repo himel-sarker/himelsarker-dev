@@ -81,11 +81,12 @@ p.lead {
 .Button1,
 .Button2 {
   background-color: rgb(124, 144, 133);
-  padding: 5px 20px;
+  padding: 5px 25px;
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  margin-left: 0px;
+  margin-left: -15px;
+  margin-right: 25px;
 }
 
 .Button1:hover,
