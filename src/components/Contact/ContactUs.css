@@ -74,13 +74,12 @@
 /* Media query for screens with a width between 450 and 768 pixels (mobile and tablet) */
 @media screen and (min-width:450px) and (max-width: 768px) {
   .glass-container {
-   
-    margin-left: 20px; /* Center the container horizontally */
-    margin-right: 20px;
+    margin-left: 50px; /* Center the container horizontally */
+    margin-right: 60px;
     padding-left: 20px;
   }
   .glass-effect {
-    width: 365px;
+    width: 320px;
   }
 
 }

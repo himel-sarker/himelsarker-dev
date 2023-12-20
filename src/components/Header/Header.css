@@ -46,8 +46,8 @@
  color:  rgb(200, 236, 137) /* Change the color to the desired hover color */
 }
 
- .page-header .identity {
-     font-family: "Pacifico", cursive;
+ .page-header {
+     font-family: "Pacifico";
      font-size: 1em;
  } 
 
