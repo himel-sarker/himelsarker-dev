@@ -137,10 +137,12 @@ const Blog = () => {
           <div className="row">
             <div className="col-md-6 order-md-1">
               <div className="imgOne">
-                <img src="/assets/JsIN1.png"
-                  alt=""
-                  className="img-fluid"
-                  />
+              <img
+  src="/assets/JsIN1.png"
+  alt=""
+  className="img-fluid blog-image" // Added class "blog-image"
+/>
+
               </div>
             </div>
 
@@ -175,11 +177,12 @@ const Blog = () => {
           <div className="row">
             <div className="col-md-6 order-md-2">
               <div className="imgTwo">
-                <img
-                  src="/assets/Meh2.png"
-                  alt=""
-                  className="img-fluid"
-                />
+              <img
+  src="/assets/Meh2.png"
+  alt=""
+  className="img-fluid blog-image" // Added class "blog-image"
+/>
+
               </div>
             </div>
             <div className="col-md-6 order-md-1">
@@ -214,10 +217,12 @@ const Blog = () => {
           <div className="row">
             <div className="col-md-6 order-md-1">
               <div className="imgThird">
-                <img src="/assets/reactJS3.png"
-                  alt=""
-                  className="img-fluid"
-                  />
+              <img
+  src="/assets/reactJS3.png"
+  alt=""
+  className="img-fluid blog-image" // Added class "blog-image"
+/>
+
               </div>
             </div>
 

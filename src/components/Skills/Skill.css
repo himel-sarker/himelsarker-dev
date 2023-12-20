@@ -46,7 +46,7 @@ p.lead {
   background-color:#c8ec89;
   border-style: groove;
   border-radius: 20px;
-  padding: 20px 50px; /* Adjust padding based on your preference */
+  padding: 5px 5px; /* Adjust padding based on your preference */
   margin: 20px 400px;
   font-family: "Courier New", monospace; /* Use a monospaced font */
   font-size: 15px; /* Adjust the font size based on your preference */
@@ -85,7 +85,7 @@ p.lead {
   border: none;
   cursor: pointer;
   border-radius: 10px;
-  margin-left: 25px;
+  margin-left: 0px;
 }
 
 .Button1:hover,
@@ -128,72 +128,52 @@ p.lead {
   padding-left: 60px;
 }
 
-/* Media Queries */
-@media screen and (max-width: 768px) {
-  /* Adjust styles for tablets and smaller screens */
-  .Happyness{
-    padding: 20px;
-    margin: 10px;
-  }
-  .Hh-xlarge {
-    padding: 20px;
-    margin: 10px;
-    
-  }
-
-  .GD-media {
-    padding-left: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .list-inline {
-    margin-right: 20px;
-  }
-
-  .Button1,
-  .Button2 {
-    margin-bottom: 10px; /* Example: Add space between buttons */
-    padding-left: 10px;
-    margin-left: 20px;
-  }
-}
 
 
-/* Media query for screens with a width between 450 and 768 pixels (mobile and tablet) */
+/* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
 
-@media screen and (min-width:450px) and (max-width: 768px) {
+@media screen and (min-width:325px) and (max-width: 768px) {
 
   /* Adjust styles for mobile devices */
   .heading-three {
     padding-right: 50px;
     padding-left: 30px;
   }
+
+  .Happyness {
+    display: grid;
+    margin: 0px;
+    grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
+    gap: 2px; /* Adjust the gap between grid items as needed */
+  }
+  
+  .section1 {
+    text-align: center;
+    margin: 50px;
+    padding: 20px;
+  }
+  
   .Skills-Achieve  {
-    justify-content: space-around;
-    padding: 10px 0; /* Adjust margin for smaller screens */   
-    margin: 25px 25px; /* Adjust margin for smaller screens */
-    margin-right: 35px;/* Adjust margin for smaller screens */
+    padding: 1px 0; /* Adjust margin for smaller screens */   
+    margin: 30px 25px;/* Adjust margin for smaller screens */
   
   }
 
   .Hh-xlarge {
-    justify-content: space-around;
-     margin: 10px -20px; /* Adjust margin for smaller screens */
-  }
-
- 
+    justify-content:flex;
+    align-items: center;
+    }
 
   .GD-media {
-    padding-left: 22px;
-    margin-left: 20px;
-    margin-right: 20px;
+    padding-left: 0px;
+    margin-left: 0px;
+
   }
 
   .Button1,
   .Button2 {
-    margin-left: 15px;
-    margin-right: 45px;
+    margin-left: 10px;
+    margin-right: 2px;
   }
 }
 

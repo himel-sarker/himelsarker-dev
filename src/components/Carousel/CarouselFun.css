@@ -183,9 +183,9 @@
 
 
 
-/* Add the following CSS for mobile and tablet screens */
+/* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
 
-@media only screen and (max-width: 767px) {
+@media screen and (min-width:325px) and (max-width: 768px) {
   .img-item {
     height: 400px; /* Adjust the height for smaller screens */
   }
@@ -205,6 +205,14 @@
   .carousel-caption h3 {
     font-size: 1em; /* Adjust font size for better readability on smaller screens */
   }
+}
+
+.download-button{
+  padding: 10px 20px;
+  margin-right: 10px; 
+  font-size: 16px;
+  margin-bottom: 5px;
+ 
 }
 
 /* Add additional media queries as needed for larger tablet screens */

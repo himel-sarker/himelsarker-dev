@@ -18,7 +18,7 @@ h1 {
 }
 
 p.lead {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -41,7 +41,7 @@ p.lead {
   padding: 20px; /* Add padding inside the box */
   padding-right: 40px ;
   margin-right: 30px ;
-  margin-left: 30px; 
+  margin-left: 35px; 
 
 }
 
@@ -59,7 +59,8 @@ p.lead {
     display: flex;
     list-style: none;
     gap: 15px;
-    padding-right: 20px;
+    margin: auto;
+    padding: 0%;
   }
 
 .social-icons a {
@@ -82,10 +83,10 @@ p.lead {
 .Details-about {
   padding-bottom: 5rem;
   max-width: 80rem;
-  padding-left: 20px;
+  padding-left: 5px;
   padding-right:20px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
   
 
 }

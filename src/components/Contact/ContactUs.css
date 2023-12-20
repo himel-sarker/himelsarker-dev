@@ -28,8 +28,8 @@
 
 .glass-container {
   max-width: 1000px;
-  margin: 50px;
-  padding: 40px;
+  margin: 40px;
+  padding: 10px;
   border-radius: 10px;
   margin-left: 450px;
   background-image: url('/assets/Caro1.jpg');
@@ -40,7 +40,7 @@
 .glass-effect {
   background: rgba(255, 255, 255, 0.1); /* Background color with transparency */
   border-radius: 8px; /* Adjust border-radius for rounded corners */
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
   width: 600px; /* Adjust the width as needed */
   margin: 0 auto; /* Center the form horizontally */
@@ -72,11 +72,12 @@
 
 
 /* Media query for screens with a width between 450 and 768 pixels (mobile and tablet) */
-@media screen and (min-width:450px) and (max-width: 768px) {
+@media screen and (min-width:325px) and (max-width: 768px) {
   .glass-container {
-    margin-left: 50px; /* Center the container horizontally */
-    margin-right: 60px;
-    padding-left: 20px;
+    margin-left: 10px; /* Center the container horizontally */
+    margin-right: 10px;
+    padding-left: 0px;
+  
   }
   .glass-effect {
     width: 320px;

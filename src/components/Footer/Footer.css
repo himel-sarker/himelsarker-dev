@@ -17,7 +17,7 @@
 
   .footer-content {
     display: flex;
-    margin-right: 350px;
+    margin-right: 370px;
     justify-content: space-between;;
   }
 
@@ -41,4 +41,24 @@
   }
 
   
-/* Media Queries for Different Screen Sizes */
+
+/* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
+
+@media only screen and (min-width: 325px) and (max-width: 768px) {
+  .footer-content {
+
+    margin-right: 150px;
+  }
+
+ 
+  .footer-section{
+    text-align: left;
+  margin-right: 0px;
+    padding-left: 5px; *
+  }
+
+  .Social {
+    display: flex;
+    gap: 10px; /* Adjust the gap between icons */
+  }
+}

@@ -14,6 +14,11 @@
   padding-right: 10px; /* Adjusted padding for smaller screens */
 }
 
+.blog-image {
+  height: 300px; /* Set the desired height */
+  object-fit: cover; /* This property ensures the image maintains its aspect ratio */
+}
+
 /* animation start */
 .Blog-main {
   opacity: 0;
@@ -66,10 +71,6 @@
 }
 
 
-.article-container {
-  /* Add styles for the article container here */
-}
-
 .article-content {
   margin: 80px;
 
@@ -79,8 +80,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  /* background-color:#a8c7e0; */
  
 }
 .imgOne{
@@ -103,9 +102,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 50px;
-  
-  /* background-color: #ffd159; */
+
 
 }
 
@@ -137,8 +134,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 50px;
-  /* background-color:#0d0628; */
 }
 
 .imgThird{
