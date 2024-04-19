@@ -34,12 +34,19 @@ p.lead {
   font-size: 1.5rem;
 }
 
-.heading-three {
+
+.heading-three {  
   padding-right: 300px;
   padding-left: 60px;
   justify-content: center;
   text-align: left;
 }
+
+.heading-three li {
+  display: inline-block;
+}
+
+
 
 .Skills-Achieve {
   background-color: #c8ec89;
@@ -162,7 +169,7 @@ p.lead {
   }
 
   .GD-media {
-    padding-left: 0px;
+    padding-left: 60px;
     margin-left: 0px;
   
 

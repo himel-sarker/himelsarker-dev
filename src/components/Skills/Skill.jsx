@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "@mui/material/Link";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Typography from "@mui/material/Typography";
 import LinearProgress from "@mui/material/LinearProgress";
 import Button from "@mui/material/Button";
 import List from "@mui/material/List";
@@ -121,60 +120,70 @@ function Skill() {
           My&nbsp; <strong style={{ color: "green" }}> Skills</strong>
         </h1>
       </div>
-      <Typography variant="h2" className="heading-three">
-        <div className="subheading mb-3">Programming Languages &amp; Tools</div>
-        <ul className="subheading mb-2">
+      
+      <div className="heading-three">
+      <div className="subheading mb-3">Programming Languages &amp; Tools</div>
+      <div className="skills-container">
+        <div className="skill">
           <li>HTML5</li>
           <LinearProgress
             variant="determinate"
             value={100}
             sx={{ height: 8, borderRadius: 4, backgroundColor: "success.main" }}
           />
-
+        </div>
+        <div className="skill">
           <li>CSS3</li>
           <LinearProgress
             variant="determinate"
             value={100}
             sx={{ height: 8, borderRadius: 4, backgroundColor: "success.main" }}
           />
-
+        </div>
+        <div className="skill">
           <li>JavaScript</li>
           <LinearProgress
             variant="determinate"
             value={65}
             sx={{ height: 8, borderRadius: 4, backgroundColor: "danger.main" }}
           />
-
+        </div>
+        <div className="skill">
           <li>React</li>
           <LinearProgress
             variant="determinate"
             value={59}
             sx={{ height: 8, borderRadius: 4, backgroundColor: "danger.main" }}
           />
-
+        </div>
+        <div className="skill">
           <li>NodeJs</li>
           <LinearProgress
             variant="determinate"
             value={55}
             sx={{ height: 8, borderRadius: 4, backgroundColor: "danger.main" }}
           />
-
+        </div>
+        <div className="skill">
           <li>PHP</li>
           <LinearProgress
             variant="determinate"
             value={65}
             sx={{ height: 8, borderRadius: 4, backgroundColor: "danger.main" }}
           />
-
+        </div>
+        <div className="skill">
           <li>Laravel</li>
           <LinearProgress
             variant="determinate"
             value={60}
             sx={{ height: 8, borderRadius: 4, backgroundColor: "danger.main" }}
           />
-        </ul>
-      </Typography>
+        </div>
+      </div>
+    </div>
 
+  
       <div className="Skills-Achieve">
         <div className="Happyness">
           <div className="section1">
