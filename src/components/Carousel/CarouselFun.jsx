@@ -150,7 +150,8 @@ const CarouselFun = () => {
               className="download-button"
               onClick={() =>
                 (window.location.href =
-                  "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")
+                  "https://drive.google.com/file/d/1qiiy8xSYDcCFSwIS0i14gPpS9ZD2lAtk/view")
+                  
               }
             >
               Download CV
