@@ -2,6 +2,7 @@ import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import Scroll from "./Scroll"; // Import the Scroll component
 
 // Define SocialLink component
 const SocialLink = ({ href, icon }) => {
@@ -75,7 +76,11 @@ function Footer() {
                   icon={<YouTubeIcon fontSize="large" />}
                 />
               </div>
-            </div>
+              </div>
+
+         {/* Scroll button */}
+             <Scroll />
+
           </div>
         </div>
       </div>
