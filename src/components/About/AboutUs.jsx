@@ -66,29 +66,30 @@ const AboutUs = () => {
           proposition.
         </p>
         <br />
-
-        <ul>
-          <li className="social-one">
-            <a href="https://www.linkedin.com/in/himel-sarker-7738b9180/">
-              <i className="icon fab fa-linkedin-in"> </i>
-            </a>
-          </li>
-          <li className="social-two">
-            <a href="https://github.com/Himel-Sarker1">
-              <i className="icon fab fa-github"></i>
-            </a>
-          </li>
-          <li className="social-three">
-            <a href="https://twitter.com/himel_sarker1">
-              <i className="icon fab fa-twitter"></i>
-            </a>
-          </li>
-          <li className="social-four">
-            <a href="https://www.facebook.com/Himelsarker01/">
-              <i className="icon fab fa-facebook-f"></i>
-            </a>
-          </li>
-        </ul>
+        <div className="social-item">
+          <ul>
+            <li className="social-one">
+              <a href="https://www.linkedin.com/in/himel-sarker-7738b9180/">
+                <i className="icon fab fa-linkedin-in"> </i>
+              </a>
+            </li>
+            <li className="social-two">
+              <a href="https://github.com/Himel-Sarker1">
+                <i className="icon fab fa-github"></i>
+              </a>
+            </li>
+            <li className="social-three">
+              <a href="https://twitter.com/himel_sarker1">
+                <i className="icon fab fa-twitter"></i>
+              </a>
+            </li>
+            <li className="social-four">
+              <a href="https://www.facebook.com/Himelsarker01/">
+                <i className="icon fab fa-facebook-f"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

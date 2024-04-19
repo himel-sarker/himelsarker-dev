@@ -169,10 +169,12 @@ p.lead {
   }
 
   .GD-media {
-    padding-left: 60px;
+    padding-left: 1px;
     margin-left: 0px;
-  
-
+  }
+  .Fields{
+    padding-left: 15px;
+    margin-left: 0px;
   }
 
   .Button1,
