@@ -10,6 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 import CheckIcon from "@mui/icons-material/Check";
 import { FaHome, FaInfo, FaTools, FaHtml5 } from "react-icons/fa";
 
+
 function Skill() {
   const [partnersCount, setPartnersCount] = useState(0);
   const [projectsDoneCount, setProjectsDoneCount] = useState(0);
@@ -72,7 +73,8 @@ function Skill() {
   };
 
   return (
-    <>
+    
+    <div className="Skill-Container">
       <Breadcrumbs className="AboutBred" aria-label="breadcrumb">
         <Link
           underline="hover"
@@ -148,8 +150,17 @@ function Skill() {
             sx={{ height: 8, borderRadius: 4, backgroundColor: "danger.main" }}
           />
         </div>
+
         <div className="skill">
-          <li>React</li>
+          <li>C#</li>
+          <LinearProgress
+            variant="determinate"
+            value={60}
+            sx={{ height: 8, borderRadius: 4, backgroundColor: "danger.main" }}
+          />
+        </div>
+        <div className="skill">
+          <li>React.js </li>
           <LinearProgress
             variant="determinate"
             value={59}
@@ -157,7 +168,7 @@ function Skill() {
           />
         </div>
         <div className="skill">
-          <li>NodeJs</li>
+          <li>Node.js</li>
           <LinearProgress
             variant="determinate"
             value={55}
@@ -210,57 +221,64 @@ function Skill() {
           </div>
         </div>
       </div>
+      
 
       <div className="GD-media">
-        <ul className="list-inline">
-          <li className="Button1">
-            <Button
-              component="a"
-              onClick={() =>
-                (window.location.href = "https://github.com/Himel-Sarker1")
-              }
-              target="_blank"
-            >
-              GitHub
-              <FaHome />
-            </Button>
-          </li>
-          <li className="Button2">
-            <Button
-              component="a"
-              onClick={() =>
-                (window.location.href =
-                  "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")
-              }
-              target="_blank"
-            >
-              Download
-              <FaHtml5 />
-            </Button>
-          </li>
-        </ul>
-      </div>
+  <ul className="list-inline">
+    <li className="Button1">
+      <Button
+        component="a"
+        onClick={() =>
+          (window.location.href = "https://github.com/himel-sarker")
+        }
+        target="_blank"
+        startIcon={<FaHome />}  // <-- Icon before text
+      >
+        GitHub
+      </Button>
+    </li>
+    <li className="Button2">
+      <Button
+        component="a"
+        onClick={() =>
+          (window.location.href =
+            "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")
+        }
+        target="_blank"
+        startIcon={<FaHtml5 />} // <-- Icon before text
+      >
+        Download CV
+      </Button>
+    </li>
+  </ul>
+</div>
 
-      <div className="Fields">
-        <div className="subheading mb-3">
-          <h2>Interested Fields</h2>
-          <List dense>
-            <ListItem>
-              <ListItemIcon>
-                <CheckIcon />
-              </ListItemIcon>
-              <ListItemText primary="Web development" />
-            </ListItem>
-            <ListItem>
-              <ListItemIcon>
-                <CheckIcon />
-              </ListItemIcon>
-              <ListItemText primary="IOT related projects" />
-            </ListItem>
-          </List>
-        </div>
-      </div>
-    </>
+
+ <div class="fields-container">
+  <h2>Interested Fields</h2>
+  <ul class="fields-list">
+    <li class="fields-list-item">
+      <span class="list-item-icon">✓</span>
+      <span>Web Development</span>
+    </li>
+    <li class="fields-list-item">
+      <span class="list-item-icon">✓</span>
+      <span>Artificial Intelligence & Machine Learning</span>
+    </li>
+    <li class="fields-list-item">
+      <span class="list-item-icon">✓</span>
+      <span>Cloud Computing & DevOps</span>
+    </li>
+    <li class="fields-list-item">
+      <span class="list-item-icon">✓</span>
+      <span>Cybersecurity & Data Privacy</span>
+    </li>
+  </ul>
+</div>
+
+  </div>
+     
+  
   );
 }
 

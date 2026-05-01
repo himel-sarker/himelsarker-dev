@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "@mui/material/Link";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { FaHome, FaInfo, FaTools, FaProjectDiagram } from "react-icons/fa";
@@ -39,10 +39,19 @@ const itemData = [
     img: "/assets/RES.jpg",
     title: "Chinese-restaurant",
   },
+   {
+    img: "/assets/Meal-tracker.jpg",
+    title: "Meal-Tracker",
+  },
 ];
 
 const MasonryImageList = () => {
   const [hoveredItems, setHoveredItems] = useState({});
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleMouseEnter = (index) => {
     setHoveredItems((prev) => ({
@@ -64,10 +73,9 @@ const MasonryImageList = () => {
       "TO-DO-List": "https://himel-sarker.github.io/TO-DO-List/",
       "Airtravel-Site": "https://himel-sarker.github.io/Airtravel-Site/",
       "Chinese-restaurant": "https://himel-sarker.github.io/Mod5_Assignmnet/",
+      "Meal-Tracker": "https://six-star-mass.netlify.app/",
     };
-
     const liveDemoUrl = liveDemoUrls[title];
-
     if (liveDemoUrl) {
       window.location.href = liveDemoUrl;
     } else {
@@ -97,7 +105,15 @@ const MasonryImageList = () => {
         }}
       >
         {itemData.map((item, index) => (
-          <ImageListItem key={item.img} className="image-list-item">
+          <ImageListItem 
+            key={item.img} 
+            className="image-list-item"
+            style={{
+              transform: isMounted ? 'translateY(0)' : 'translateY(-40px)',
+              opacity: isMounted ? 1 : 0,
+              transition: `transform 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) ${index * 0.15}s, opacity 1.2s cubic-bezier(0.22, 0.61, 0.36, 1) ${index * 0.15}s`
+            }}
+          >
             <img
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=248&fit=crop&auto=format`}
@@ -119,12 +135,25 @@ const MasonryImageList = () => {
         ))}
       </ImageList>
     </Box>
+    
   );
 };
 
 const Project = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <div className="project-container">
+    <div className="project-container"
+      style={{
+        transform: isMounted ? 'translateY(0)' : 'translateY(-25px)',
+        opacity: isMounted ? 1 : 0,
+        transition: 'transform 1.8s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 1.8s cubic-bezier(0.22, 0.61, 0.36, 1)'
+      }}
+    >
       <Breadcrumbs className="project-breadcrumbs" aria-label="breadcrumb">
         <Link
           underline="hover"
@@ -190,4 +219,5 @@ const Project = () => {
     </div>
   );
 };
+
 export default Project;

@@ -1,51 +1,100 @@
-// Scroll.jsx
-import React from 'react';
-import './ScrollButton.css';
+import React, { useState, useRef, useEffect } from 'react';
+import './Scroll.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesUp } from '@fortawesome/free-solid-svg-icons';
 
-class Scroll extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      intervalId: 0,
-      scrollStepInPx: 50
-    };
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll = () => {
-    if (window.pageYOffset > 300) { // Change the value to your desired scroll position
-      document.getElementById('scrollButton').style.display = 'block';
-    } else {
-      document.getElementById('scrollButton').style.display = 'none';
+function Scroll({ children }) {
+  const [showScrollbar, setShowScrollbar] = useState(false);
+  const containerRef = useRef(null);
+  const timeoutRef = useRef(null);
+  
+  // Show scrollbar on hover
+  const handleMouseEnter = () => {
+    setShowScrollbar(true);
+    clearHideTimeout();
+  };
+  
+  // Hide scrollbar after delay when mouse leaves
+  const handleMouseLeave = () => {
+    startHideTimeout();
+  };
+  
+  // Show scrollbar on click and reset hide timer
+  const handleClick = () => {
+    setShowScrollbar(true);
+    startHideTimeout();
+  };
+  
+  const startHideTimeout = () => {
+    clearHideTimeout();
+    timeoutRef.current = setTimeout(() => {
+      setShowScrollbar(false);
+    }, 2000);
+  };
+  
+  const clearHideTimeout = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
     }
   };
-
-  scrollToTop = () => {
-    let intervalId = setInterval(this.scrollStep, 15);
-    this.setState({ intervalId: intervalId });
-  };
-
-  scrollStep = () => {
-    if (window.pageYOffset === 0) {
-      clearInterval(this.state.intervalId);
-    }
-    window.scroll(0, window.pageYOffset - this.state.scrollStepInPx);
-  };
-
-  render() {
-    return (
-      <button id="scrollButton" className="scroll-btn" onClick={this.scrollToTop} title="Back to Top">
-        <span className="arrow-up"></span>
-      </button>
-    );
-  }
+  
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => clearHideTimeout();
+  }, []);
+  
+  return (
+    <div
+      ref={containerRef}
+      className={`scroll-container ${showScrollbar ? 'show-scrollbar' : ''}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+    >
+      {children}
+    </div>
+  );
 }
 
-export default Scroll;
+// Scroll to top button component
+function ScrollToTopButton() {
+  const [isVisible, setIsVisible] = useState(false);
+  
+  // Show button when page is scrolled down
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+  
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
+
+  return (
+  <button 
+  className={`scroll-btn ${isVisible ? 'visible' : ''}`}
+  onClick={scrollToTop}
+  aria-label="Scroll to top"
+>
+  <FontAwesomeIcon icon={faAnglesUp} />
+</button>
+  );
+
+
+}
+
+export { Scroll, ScrollToTopButton };

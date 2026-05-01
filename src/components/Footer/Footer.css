@@ -1,61 +1,93 @@
 /*=========================
   Footer
  ==========================*/
-
 .page-footer:before {
-  content: " ";
-  display: block;
-  height: 15px;
+  content: " "!important;
+  display: block!important;
+  height: 15px!important;
 }
-
 .page-footer {
   color: #379591;
   font-size: 1rem;
   padding: 1em 0;
 }
-
 .footer-content {
-  display: flex;
-  margin-right: 370px;
-  justify-content: space-between;
+  display: flex!important;
+  flex-wrap: wrap!important;
+  justify-content: space-between!important;
 }
-
 .footer-section {
-  text-align: left;
-  padding-left: 32px;
+  text-align: left!important;
+  padding-left: 32px!important;
+  flex: 1!important;
+  min-width: 250px!important;
 }
-
 .Social {
-  display: flex;
-  margin-top: 10px;
-  gap: 16px; /* Adjust the gap between icons */
+  display: flex!important;
+  margin-top: 10px!important;
+  gap: 16px!important;/* Adjust the gap between icons */
 }
-
 .Social a {
-  text-decoration: none;
-  color: rgb(243, 237, 237); /* Adjust the color of the links */
+  text-decoration: none!important;
+  color: rgb(243, 237, 237)!important; /* Adjust the color of the links */
 }
-
 .Social a:hover {
-  color: lightgreen;
+  color: lightgreen!important;
 }
 
 /* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
-
 @media only screen and (min-width: 325px) and (max-width: 768px) {
   .footer-content {
-    position: relative;
-    margin-right: 146px;
+    margin-right: 14px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-
-  .footer-section {
-    text-align: left;
+  .footer-one, .footer-two{
     margin-right: 0px;
-    padding-left: 5px;
+    padding-left: 30px;
+    text-align: center;
+    width: 100%;
   }
-
   .Social {
-    display: flex;
-    gap: 10px; /* Adjust the gap between icons */
+    gap: 20px; /* Adjust the gap between icons */
+    justify-content: center;
+  }
+}
+
+/* Media query for screens between 769px and 1024px (small desktop) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .footer-content {
+    margin-right: 100px;
+  }
+  .footer-one {
+    padding-left: 20px!important;
+  }
+}
+
+/* Media query for screens between 1025px and 1199px (medium desktop) */
+@media only screen and (min-width: 1025px) and (max-width: 1199px) {
+  .footer-content {
+    margin-right: 200px;
+  }
+  .footer-one {
+    padding-left: 25px!important;
+  }
+}
+
+/* Media query for screens 1200px and up (large desktop) */
+@media only screen and (min-width: 1200px) {
+
+  .footer-content {
+    max-width: 1200px!important;
+    margin: 0 auto!important;
+    padding: 20px!important;
+  }
+  .footer-one {
+    padding-left: 0px!important;
+    flex: 1!important;
+  }
+  .Social {
+    gap: 24px!important;/* Larger gap for big screens */
   }
 }

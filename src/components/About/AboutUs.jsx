@@ -53,11 +53,12 @@ const AboutUs = () => {
           Himel&nbsp;<strong style={{ color: "green" }}>Sarker</strong>
         </h1>
         <div className="subheading mb-5">
-          Progoti Shoroni, K/A Joar Shara Baza, Kuril, Bashundhara, Dhaka, 1229
-          · (+880) 1795-114407 <br />
-          <a href="mailto:himelsarker85@gmail.com">
-            <span className="email-green">himelsarker85@gmail.com</span>
-          </a>
+          Progoti Shoroni, K/A Joar Shara Baza, Kuril, Bashundhara, Dhaka, 1229 <br />
+          (+880) 1795-114407 <br />
+          <a href="mailto:himelsarker.softdev@gmail.com" className="email-link">
+                 himelsarker.softdev@gmail.com
+            </a>
+
         </div>
         <p className="lead mb-5">
           I am experienced in leveraging agile frameworks to provide a robust
@@ -68,13 +69,15 @@ const AboutUs = () => {
         <br />
         <div className="social-item">
           <ul>
+            
+
             <li className="social-one">
-              <a href="https://www.linkedin.com/in/himel-sarker-7738b9180/">
+              <a href="https://www.linkedin.com/in/himel-sarker/">
                 <i className="icon fab fa-linkedin-in"> </i>
               </a>
             </li>
             <li className="social-two">
-              <a href="https://github.com/Himel-Sarker1">
+              <a href="https://github.com/himel-sarker">
                 <i className="icon fab fa-github"></i>
               </a>
             </li>
@@ -84,7 +87,7 @@ const AboutUs = () => {
               </a>
             </li>
             <li className="social-four">
-              <a href="https://www.facebook.com/Himelsarker01/">
+              <a href="https://www.facebook.com/himelsarker0/">
                 <i className="icon fab fa-facebook-f"></i>
               </a>
             </li>

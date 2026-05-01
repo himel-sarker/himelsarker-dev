@@ -1,185 +1,410 @@
-.about-container {
-  font-family: "Roboto", sans-serif;
-  border: 2px solid #2cd032; /* Set border color */
+
+/* ==============================
+   Base Styles
+============================== */
+.Skill-Container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.AboutBred {
+.container {
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  border: 2px solid var(--border-color);
+}
+
+/* ==============================
+   Skill Section
+============================== */
+.skill-name {
+  text-align: center;
+  margin: 2rem 0 3rem;
 }
 
 .skill-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 10px;
-  padding-left: 20px; /* Adjusted padding for smaller screens */
-  padding-right: 10px; /* Adjusted padding for smaller screens */
-}
-
-h2 {
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-p.lead {
-  font-size: 1.15rem;
-  font-weight: 400;
-}
-
-.subheading {
-  font-weight: 400;
-  font-size: 1.5rem;
-}
-
-
-.heading-three {  
-  padding-right: 300px;
-  padding-left: 60px;
-  justify-content: center;
-  text-align: left;
-}
-
-.heading-three li {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  position: relative;
   display: inline-block;
 }
 
+.skill-text::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+}
 
+.heading-three {
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
 
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subheading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+  border-radius: 2px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.skill {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.skill:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-green);
+}
+
+.skill li {
+  list-style: none;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.skill li::before {
+  content: '▸';
+  color: var(--light-green);
+  font-size: 1.3rem;
+}
+
+/* ==============================
+   Progress Bar
+============================== */
+.MuiLinearProgress-root {
+  height: 10px !important;
+  border-radius: var(--radius-md) !important;
+  background-color: var(--neutral-200) !important;
+  overflow: hidden;
+}
+
+.MuiLinearProgress-bar {
+  border-radius: var(--radius-md) !important;
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-green)) !important;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==============================
+   Achievement Section
+============================== */
 .Skills-Achieve {
-  background-color: #c8ec89;
-  border-style: groove;
-  border-radius: 20px;
-  padding: 5px 5px; /* Adjust padding based on your preference */
-  margin: 20px 400px;
-  font-family: "Courier New", monospace; /* Use a monospaced font */
-  font-size: 15px; /* Adjust the font size based on your preference */
-  font-weight: bold;
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
 }
 
 .Happyness {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.section1 {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
   text-align: center;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.section1:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-green);
 }
 
 .Hh-xlarge {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section1 span:last-child {
+  color: var(--neutral-500);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+}
+
+/* ==============================
+   Buttons 
+============================== */
+.GD-media {
   display: flex;
-  justify-content: center; /* Adjust to your preference */
-  align-items: center; /* Vertically center the content */
-  border-style: dotted;
-  padding: 50px; /* Adjust padding based on your preference */
-  margin: 10px;
-  box-shadow: 1px 5px 10px;
-  background-color: rgb(175, 191, 136);
-  min-width: 120px; /* Set a minimum width to prevent background padding */
-  text-align: center;
-  font-size: 24px; /* Adjust the font size based on your preference */
-  overflow: hidden; /* Prevent content overflow */
-  transition: all 0.3s ease; /* Add a transition for smoother changes */
-  width: 10px;
+  justify-content: center;
+  margin: 2rem auto;
+  max-width: 500px;
+}
+
+.list-inline {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .Button1,
 .Button2 {
-  justify-content: center; /* Adjust to your preference */
-  align-items: center; /* Vertically center the content */
-  background-color: rgb(124, 144, 133);
-  padding: 5px 25px;
-  border: none;
+  position: relative;
+  background: var(--primary-green);
+  color: rgb(241, 243, 237);
+  padding: 8px 12px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 2px solid var(--bg-primary);
   cursor: pointer;
-  border-radius: 10px;
-  margin-left: -15px;
-  margin-right: 25px;
+  border-radius: 30px;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to left, var(--primary-green) 50%, var(--dark-green) 50%);
+  background-position: right;
+  transition: background-position 0.5s ease;
 }
 
 .Button1:hover,
 .Button2:hover {
-  background-color: #008000;
+  color: white;
+  background-position: left;
+  background-image: linear-gradient(to left, var(--primary-green) 50%, var(--dark-green) 50%);
 }
 
 .Button1 a,
 .Button2 a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  color: #fff;
+  gap: 0.3rem;
+  text-decoration: none;
+  color: inherit;
 }
 
-.Button1 FaHome,
-.Button2 FaHtml5 {
-  margin-left: 10px;
+/* ==============================
+   Fields Section
+============================== */
+.fields-container {
+  background: var(--card-bg);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
-.GD-media {
-  padding-left: 290px;
-  margin-left: 500px;
-  margin-right: 500px;
+.fields-container h2 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.75rem;
 }
 
-.list-inline {
+.fields-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--primary-green), var(--secondary-green));
+}
+
+.fields-list {
   display: flex;
-  margin: 10px;
-  margin-right: 320px;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-.Fields {
-  padding: 20px;
-  margin: 20px;
-  padding-left: 60px;
+.fields-list-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: var(--neutral-100);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-green);
+  transition: all 0.3s ease;
 }
 
-/* Media query for screens with a width between 325 and 768 pixels (mobile and tablet) */
+.fields-list-item:hover {
+  background: var(--light-green);
+  transform: translateX(5px);
+}
 
-@media screen and (min-width: 325px) and (max-width: 768px) {
-  /* Adjust styles for mobile devices */
-  .heading-three {
-    padding-right: 50px;
-    padding-left: 30px;
-  
-  }
+.list-item-icon {
+  color: var(--primary-green);
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+}
 
-  .Happyness {
+/* ==============================
+   Dark Mode Toggle Button
+============================== */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  padding: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
 
-    display: grid;
-    margin: 50px;
-    grid-template-columns: repeat(1, 1fr); /* Single column for mobile */
-    gap: 2px; /* Adjust the gap between grid items as needed */
-  }
+.theme-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+}
 
-  .section1 {
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-   
-  }
+.theme-toggle-icon {
+  font-size: 1.2rem;
+}
 
-  .Skills-Achieve {
-    padding: 1px 0; /* Adjust margin for smaller screens */
-    margin: 40px 60px; /* Adjust margin for smaller screens */
-  }
+/* ==============================
+   Responsive Design
+============================== */
 
-  .Hh-xlarge {
-    justify-content: flex;
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .list-inline {
+    flex-direction: column;
     align-items: center;
   }
-
-  .GD-media {
-    padding-left: 1px;
-    margin-left: 0px;
-  }
-  .Fields{
-    padding-left: 15px;
-    margin-left: 0px;
-  }
-
-  .Button1,
+  
+  .Button1, 
   .Button2 {
-    margin-left: 0px;
-    margin-right: 15px;
+    display: none;
+  }
+  
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .skill-text {
+    font-size: 2.25rem;
+  }
+  
+  .heading-three {
+    padding: 2rem;
+  }
+  
+  .skills-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .Happyness {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .Hh-xlarge {
+    font-size: 2.2rem;
+  }
+  
+  .fields-container {
+    padding: 2rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1300px;
+    padding: 0 2rem;
+  }
+  
+  .skill-text {
+    font-size: 3rem;
+  }
+  
+  .skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .Happyness {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .heading-three,
+  .fields-container,
+  .Skills-Achieve {
+    padding: 3rem;
   }
 }

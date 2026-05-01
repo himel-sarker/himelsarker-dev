@@ -1,7 +1,10 @@
 .project-container {
   font-family: "Roboto", sans-serif;
-  border: 2px solid #2cd032; /* Set border color */
+  border: 2px solid #2cd032;
+  opacity: 0; /* Start with invisible */
+  transform: translateY(-25px); /* Start position above - increased distance */
 }
+
 .project-breadcrumbs {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -24,9 +27,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 10px; /* Adjusted padding for smaller screens */
-  padding-right: 10px; /* Adjusted padding for smaller screens */
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 .image-item-overlay {
   position: absolute;
   bottom: 0;
@@ -38,16 +42,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background: rgba(0, 0, 0, 0.7); */
   color: rgb(251, 251, 235);
-  /* visibility: hidden; */
   transition: visibility 0.3s ease-in-out;
 }
 
 .image-list-item {
-  width: 100%; /* Set the width to 100% initially */
+  width: 100%;
   position: relative;
   overflow: hidden;
+  opacity: 0; /* Start with invisible */
+  transform: translateY(-40px); /* Start position above - increased distance */
 }
 
 .image-list-item img {
@@ -81,7 +85,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-/* Media query for screens with a width between 481 and 768 pixels (tablet) */
+/* Media query for screens with a width between 325px and 768px */
 @media only screen and (min-width: 325px) and (max-width: 768px) {
   .project-content,
   .project-text,
@@ -89,7 +93,7 @@
     width: auto;
     padding-bottom: 5px;
   }
-
+  
   .buttonLive {
     background-color: green;
     color: white;
@@ -101,30 +105,28 @@
     font-size: 14px;
     cursor: pointer;
   }
+}
 
-  /* Media query for screens with a width greater than 768 pixels (desktop) */
-  @media only screen and (min-width: 769px) {
-    .project-content,
-    .project-text,
-    .image-item-overlay {
-      padding-left: 60px; /* Adjusted padding for desktop */
-      padding-right: 60px; /* Adjusted padding for desktop */
-    }
-    .image-item-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      /* background: rgba(0, 0, 0, 0.7); */
-      color: rgb(251, 251, 235);
-      /* visibility: hidden; */
-      transition: visibility 0.3s ease-in-out;
-    }
+/* Media query for screens with a width greater than 768px */
+@media only screen and (min-width: 769px) {
+  .project-content,
+  .project-text,
+  .image-item-overlay {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  
+  .image-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(251, 251, 235);
   }
 }

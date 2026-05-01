@@ -1,8 +1,7 @@
 /* Default styles for all screen sizes */
-
 .contact-container {
   justify-content: space-between;
-  border: 2px solid #2cd032; /* Set border color */
+  border: 2px solid #2cd032;
 }
 
 .contactBred {
@@ -16,8 +15,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 10px; /* Adjusted padding for smaller screens */
-  padding-right: 10px; /* Adjusted padding for smaller screens */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 /* glass-effect */
@@ -28,22 +27,23 @@
 
 .glass-container {
   max-width: 1000px;
-  margin: 40px;
-  padding: 10px;
+  margin: 40px auto; /* Changed from margin-left:450px to auto for centering */
+  padding: 50px;
   border-radius: 10px;
-  margin-left: 450px;
   background-image: url("/assets/Caro1.jpg");
   background-size: cover;
-  will-change: opacity, transform; /* React Spring Animation Styles */
+  will-change: opacity, transform;
+  width: 90%; /* Added responsive width */
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1); /* Background color with transparency */
-  border-radius: 8px; /* Adjust border-radius for rounded corners */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
   padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
-  width: 600px; /* Adjust the width as needed */
-  margin: 0 auto; /* Center the form horizontally */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Changed from fixed 600px to 100% */
+  max-width: 600px; /* Added max-width for large screens */
+  margin: 0 auto;
 }
 
 .sendButton {
@@ -55,32 +55,65 @@
 }
 
 .glass-effect-input {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Adjust the alpha channel for transparency */
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 5px;
   padding: 10px;
-  color: #fff; /* Adjust text color */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adjust shadow as needed */
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .error-message {
   color: red;
-  margin-top: 5px; /* Optional: Add some spacing between the input and the error message */
+  margin-top: 5px;
 }
 
-/* Media query for screens with a width between 450 and 768 pixels (mobile and tablet) */
+/* Media query for screens with a width between 325px and 768px */
 @media screen and (min-width: 325px) and (max-width: 768px) {
   .glass-container {
-    margin-left: 10px; /* Center the container horizontally */
-    margin-right: 10px;
-    padding-left: 0px;
+    width: 95%; /* Increased width for small screens */
+    margin: 20px auto; /* Reduced margin */
+    padding: 5px;
   }
+  
   .glass-effect {
-    width: 320px;
+    width: 100%;
+    max-width: 100%; /* Full width on small screens */
+    padding: 15px; /* Reduced padding */
+  }
+}
+
+/* Media query for screens between 768px and 991px */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .glass-container {
+    width: 85%; /* Adjusted width for medium screens */
+    margin: 30px auto;
+  }
+  
+  .glass-effect {
+    max-width: 500px; /* Slightly reduced max-width */
+  }
+}
+
+/* Media query for large screens (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .glass-container {
+    width: 80%; /* Adjusted width for large screens */
+    margin: 45px auto;
+  }
+  
+  .glass-effect {
+    max-width: 550px; /* Adjusted max-width */
+  }
+}
+
+/* Media query for extra large screens (1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .glass-container {
+    max-width: 1200px; /* Increased max-width for very large screens */
+  }
+  
+  .glass-effect {
+    max-width: 600px; /* Original max-width */
   }
 }

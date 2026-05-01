@@ -43,6 +43,8 @@ const Blog = () => {
   }, []);
 
   return (
+    <div className="Skill-Container">
+    
     <div className={`Blog-main ${imagesLoaded ? "loaded" : ""}`}>
       <div className="Blog-container">
         <Breadcrumbs className="BlogBred" aria-label="breadcrumb">
@@ -135,7 +137,7 @@ const Blog = () => {
               <div className="col-md-6 order-md-1">
                 <div className="imgOne">
                   <img
-                    src="/assets/JsIN1.png"
+                    src="/assets/API&SQL.png"
                     alt=""
                     className="img-fluid blog-image" // Added class "blog-image"
                   />
@@ -145,20 +147,18 @@ const Blog = () => {
               <div className="col-md-6 order-md-2">
                 <div className="article-content">
                   <Typography variant="h4" gutterBottom>
-                    1. Ten JavaScript Interview Questions
+                    1. Optimizing ASP.NET Web APIs for Real-Time ERP Systems (With Practical Examples)
                   </Typography>
                   <Typography variant="h6" gutterBottom>
                     Features
                   </Typography>
                   <Typography paragraph>
-                    null vs undefined Q: Could you tell me the differences
-                    between null and undefined? Ans:-usually we can make 7 to 8
-                    ways. the differences are given below let maria;//no value
-                    has been set&nbsp;
+                   A professional ASP.NET developer must think in two dimensions at the same time:
+                   How the API behaves & How SQL Server executes the request.This article explains ERP-focused optimization techniques, showing both ASP.NET and SQL Server perspectives together, with real code examples.&nbsp;
                     <button
                       onClick={() =>
                         (window.location.href =
-                          "https://medium.com/@himelsarker85/10-javascript-interview-questions-ed65603046fc")
+                          "https://medium.com/@himelsarker/optimizing-asp-net-web-apis-for-real-time-erp-systems-with-practical-examples-2d848b27f779")
                       }
                       target="_blank"
                       rel="noopener noreferrer"
@@ -255,9 +255,53 @@ const Blog = () => {
               </div>
             </div>
           </div>
+
+         {/* Fourth Article */}
+     <div className="Blog-Four">
+      <div className="row">
+        <div className="col-md-6 order-md-1">
+          <div className="article-content">
+            <Typography variant="h4" gutterBottom>
+              4. SQL Basics…!
+            </Typography>
+            <Typography variant="h6" gutterBottom>
+              Features
+            </Typography>
+            <Typography paragraph>
+              SQL Basics Cheat Sheet…! What is SQL?
+              <br />
+              SQL (Structured Query Language) is the standard language for
+              managing relational databases.
+            </Typography>
+            <button
+              onClick={() =>
+                (window.location.href =
+                  "https://medium.com/@himelsarker85/sql-basics-cheat-sheet-75cd9d3aa6e4")
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read more...
+            </button>
+          </div>
+        </div>
+
+        {/* Image second (visually on the right) */}
+        <div className="col-md-6 order-md-2">
+          <div className="imgFour">
+            <img
+              src="/assets/SQL.png"
+              alt="SQL Basics"
+              className="img-fluid blog-image"
+            />
+          </div>
+        </div>
+      </div>
+      </div>
         </div>
       </div>
     </div>
+      </div>
   );
 };
 

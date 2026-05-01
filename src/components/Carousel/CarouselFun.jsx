@@ -1,90 +1,61 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// WebDeveloperAnimation component
 const WebDeveloperAnimation = () => {
-  const words = ["Front-end Developer", "ReactJs Developer"]; // Add more words as needed
-  const [animatedText, setAnimatedText] = useState("");
-  const [isIncreasing, setIsIncreasing] = useState(true);
+  const words = ["Software Developer", ".Net & React.js Lover"];
+  const [currentText, setCurrentText] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+  const pauseDuration = 1000; // Pause after typing/deleting
+  const typingSpeedRef = useRef(typingSpeed);
+  const isDeletingRef = useRef(isDeleting);
+  const currentIndexRef = useRef(currentIndex);
+
+  // Update refs when state changes
+  useEffect(() => {
+    typingSpeedRef.current = typingSpeed;
+    isDeletingRef.current = isDeleting;
+    currentIndexRef.current = currentIndex;
+  }, [typingSpeed, isDeleting, currentIndex]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      const randomIndex = Math.floor(Math.random() * words.length);
-      const targetWord = words[randomIndex];
-      let index = 0;
-
-      const addAnimation = setInterval(() => {
-        setAnimatedText((prevText) => {
-          const currentText = targetWord.slice(0, index);
-          index += 1;
-          return currentText;
-        });
-
-        if (index > targetWord.length) {
-          clearInterval(addAnimation);
-
+    const currentWord = words[currentIndex];
+    
+    const handleTyping = () => {
+      if (isDeletingRef.current) {
+        // Deleting characters
+        setCurrentText(currentWord.substring(0, currentText.length - 1));
+        
+        if (currentText.length === 1) {
+          // Pause before switching to next word
           setTimeout(() => {
-            if (isIncreasing) {
-              stopAndResetAnimation(targetWord);
-            } else {
-              startDecreasingAnimation(targetWord);
-            }
-          }, 1000); // Adjust the duration as needed
+            setIsDeleting(false);
+            setCurrentIndex((prev) => (prev + 1) % words.length);
+          }, pauseDuration);
         }
-      }, 50); // Adjust the duration as needed for smoother transition
-    }, 3000); // Adjust the interval duration as needed
-
-    return () => clearInterval(interval);
-  }, [words, isIncreasing]);
-
-  const stopAndResetAnimation = (targetWord) => {
-    setAnimatedText(targetWord);
-    setIsIncreasing(false);
-    setTimeout(() => {
-      resetAnimation(targetWord);
-    }, 500); // 2-second stop, adjust the duration as needed
-  };
-
-  const startDecreasingAnimation = (targetWord) => {
-    setIsIncreasing(true);
-    let index = targetWord.length;
-
-    const decreaseInterval = setInterval(() => {
-      setAnimatedText((prevText) => {
-        const currentText = targetWord.slice(0, index);
-        index -= 1;
-        return currentText;
-      });
-
-      if (index < 0) {
-        clearInterval(decreaseInterval);
+      } else {
+        // Typing characters
+        setCurrentText(currentWord.substring(0, currentText.length + 1));
+        
+        if (currentText.length === currentWord.length) {
+          // Pause before starting deletion
+          setTimeout(() => setIsDeleting(true), pauseDuration);
+        }
       }
-    }, 50); // Adjust the duration as needed for smoother transition
-  };
+    };
 
-  const resetAnimation = (targetWord) => {
-    let index = targetWord.length;
-
-    const resetInterval = setInterval(() => {
-      setAnimatedText((prevText) => {
-        const currentText = targetWord.slice(0, index);
-        index -= 1;
-        return currentText;
-      });
-
-      if (index < 0) {
-        clearInterval(resetInterval);
-      }
-    }, 50); // Adjust the duration as needed for smoother transition
-  };
+    const timer = setTimeout(handleTyping, typingSpeedRef.current);
+    return () => clearTimeout(timer);
+  }, [currentText, currentIndex, isDeleting, words]);
 
   return (
-    <div className="WebDeveloperAnimation">
-      {animatedText}
-      <span className="blinking-caret">|</span>
+    <div className="web-developer-animation">
+      <span className="animated-text">{currentText}</span>
+      <span className="caret">|</span>
     </div>
   );
 };
@@ -102,7 +73,6 @@ const CarouselFun = () => {
         </p>
       ),
     },
-    // Add more items if needed
   ];
 
   // SocialLink component
@@ -120,7 +90,6 @@ const CarouselFun = () => {
   };
 
   const item = items[0];
-
   return (
     <div id="myCarousel">
       <div className="carousel-inner">
@@ -128,16 +97,14 @@ const CarouselFun = () => {
           <img src={item.src} alt={item.altText} className="img-item" />
           <div className="carousel-caption">
             <h1 className="title one">{item.altText}</h1>
-
             <h3>{item.caption}</h3>
-
             <div className="social-links">
               <SocialLink
-                href="https://www.linkedin.com/in/himel-sarker-7738b9180/"
+                href="https://www.linkedin.com/in/himel-sarker/"
                 icon={<LinkedInIcon fontSize="large" />}
               />
               <SocialLink
-                href="https://github.com/Himel-Sarker1"
+                href="https://github.com/himel-sarker"
                 icon={<GitHubIcon fontSize="large" />}
               />
               <SocialLink
@@ -148,19 +115,20 @@ const CarouselFun = () => {
             <br />
             <button
               className="download-button"
-              onClick={() =>
-                (window.location.href =
-                  "https://drive.google.com/file/d/1qiiy8xSYDcCFSwIS0i14gPpS9ZD2lAtk/view")
-                  
-              }
+              onClick={() => {
+                window.open(
+                  "https://drive.google.com/file/d/1qiiy8xSYDcCFSwIS0i14gPpS9ZD2lAtk/view",
+                  "_blank"
+                );
+              }}
             >
               Download CV
             </button>
             <button
               className="hire-button"
-              onClick={() =>
-                (window.location.href = "mailto:himelsarker85@gmail.com")
-              }
+              onClick={() => {
+                window.location.href = "mailto:himelsarker.softdev@gmail.com";
+              }}
             >
               Hire me
             </button>
@@ -171,4 +139,5 @@ const CarouselFun = () => {
     </div>
   );
 };
+
 export default CarouselFun;

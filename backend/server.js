@@ -1,67 +1,83 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import express from 'express';
 import nodemailer from 'nodemailer';
-import bodyParser from 'body-parser';
 import cors from 'cors';
-import path from 'path'; // Add this line
+import path from 'path';
+import { fileURLToPath } from 'url';
+import rateLimit from 'express-rate-limit';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+const contactLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 3,
+  message: { success: false, message: 'Too many requests, please try again later.' }
+});
 
-// Nodemailer transporter setup (replace with your email configuration)
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? 'https://himelsarker-dev.netlify.app' 
+    : 'http://localhost:5173',
+  optionsSuccessStatus: 200
+}));
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, 'public')));
+
+if (!process.env.EMAIL_USER || !process.env.CLIENT_ID || !process.env.CLIENT_SECRET || !process.env.REFRESH_TOKEN) {
+  console.error("FATAL ERROR: Missing email environment variables.");
+}
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     type: 'OAuth2',
-    user: process.env.EMAIL_USER || 'himelsarker85@gmail.com',
-    clientId: 'your-client-id',
-    clientSecret: 'your-client-secret',
-    refreshToken: 'your-refresh-token',
-    accessToken: 'your-access-token',
+    user: process.env.EMAIL_USER,
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    refreshToken: process.env.REFRESH_TOKEN,
   },
 });
 
+app.post('/contact', contactLimiter, async (req, res) => {
+  try {
+    const { name, email, subject, message } = req.body;
 
-// Serve static files from the "public" folder
-app.use(express.static(path.join('public')));
+    if (!name || !email || !subject || !message) {
+      return res.status(400).json({ success: false, message: 'All fields are required.' });
+    }
 
-// Handle requests to the root path
-app.get('/', (req, res) => {
-  res.send('Hello, this is your server!');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ success: false, message: 'Invalid email format.' });
+    }
+
+    const mailOptions = {
+      from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      replyTo: email,
+      subject: `Portfolio Contact: ${subject}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    return res.status(200).json({ success: true, message: 'Message sent successfully!' });
+
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return res.status(500).json({ success: false, message: 'Internal server error.' });
+  }
 });
 
-app.post('/contact', (req, res) => {
-  const { name, email, subject, message } = req.body;
-
-  // Validate input
-  if (!name || !email || !subject || !message) {
-    return res.status(400).send('All fields are required');
-  }
-
-  // Validate email format
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    return res.status(400).send('Invalid email format');
-  }
-
-  const mailOptions = {
-    from: process.env.EMAIL_USER || 'your-email@gmail.com',
-    to: 'himelsarker85@gmail.com',
-    subject: `New Contact Form Submission: ${subject}`,
-    text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}\n\nSender's Email: ${email}`,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error);
-      return res.status(500).send('Internal Server Error');
-    }
-    console.log('Email sent:', info.response);
-    res.status(200).send('Email sent successfully');
-  });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {

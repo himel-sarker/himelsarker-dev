@@ -1,19 +1,22 @@
 :root {
-  --bg-color:green; /* Define the CSS variable */
+  --bg-color: green; /* Define the CSS variable */
 }
-
 .about-container {
   justify-content: space-between;
   border: 2px solid #2cd032; /* Set border color */
 }
-
+/* Breadcrumbs Modernization */
 .AboutBred {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 25px;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 2rem;
 }
-
+.AboutBred a {
+  font-weight: 600;
+  transition: all 0.2s ease;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+}
 h1 {
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
@@ -21,16 +24,14 @@ h1 {
   font-weight: 700;
   text-transform: uppercase;
 }
-
 p.lead {
   font-size: 1rem;
   font-weight: 400;
 }
-
-.email-green {
-  color: #3e6a08;
+a.email-link {
+  color: #008000;
+  text-transform: lowercase;
 }
-
 .subheading {
   font-weight: 500;
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont,
@@ -38,45 +39,33 @@ p.lead {
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.5rem;
 }
-
 .My-about {
   border: 2px solid #2cd032; /* Set border color */
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   border-radius: 10px; /* Add rounded corners */
   background-color: rgb(249, 250, 252);
   padding: 20px; /* Add padding inside the box */
-  padding-right: 40px;
-  margin-right: 30px;
-  margin-left: 35px;
 }
-
 .My-about h2 {
   color: #2c3e50; /* Set color for the heading */
 }
-
 .My-about p {
   color: #34495e; /* Set color for the paragraph text */
 }
-
-
-
 /* Default list styles */
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 /* Flex layout for list items */
 ul {
   display: flex;
 }
-
 /* Individual social link styles */
 .social-one, .social-two, .social-three, .social-four {
   margin-right: 1rem;
 }
-
 /* Link container styles */
 .social-one a, .social-two a, .social-three a, .social-four a {
   display: flex;
@@ -88,12 +77,11 @@ ul {
   z-index: 0;
   scale: 1 1;
   border-radius: 50%; /* Make the link container round */
-  background-color: rgb(144, 238, 144);
-  border: 3px solid rgb(235, 239, 235);
+  background-color: rgb(153, 226, 80);
+  border: 3px solid rgb(206, 222, 206);
   overflow: hidden;
   text-decoration: none; /* Remove underline */
 }
-
 /* Background animation */
 .social-one a::before, .social-two a::before, .social-three a::before, .social-four a::before {
   content: "";
@@ -106,12 +94,10 @@ ul {
   transform-origin: bottom; /* Set transform-origin to bottom */
   transition: transform 0.5s ease; /* Only transition transform property */
 }
-
 /* Background animation on hover */
 .social-one:hover a::before, .social-two:hover a::before, .social-three:hover a::before, .social-four:hover a::before {
   transform: scaleY(1); /* Scale to 1 on hover */
 }
-
 /* Icon styles */
 .icon {
   font-size: 2rem;
@@ -120,13 +106,11 @@ ul {
   z-index: 1;
   text-decoration: none; /* Remove underline */
 }
-
 /* Icon color change on hover */
 .social-one:hover .icon, .social-two:hover .icon, .social-three:hover .icon, .social-four:hover .icon {
   color: #fff;
   transform: rotateY(360deg);
 }
-
 .Details-about {
   padding-bottom: 5rem;
   max-width: 80rem;
@@ -134,34 +118,111 @@ ul {
   margin-left: 20px;
   margin-right: 20px;
 }
-
-/*-----------Responsive Moode..............*/
-
-/* Responsive Mode for screens wider than or equal to 768px (tablets and desktops) */
-@media only screen and (min-width: 325px) and (max-width: 768px) {
+/*-----------Responsive Mode for .My-about and .Details-about..............*/
+/* Mobile devices (320px - 575px) */
+@media only screen and (max-width: 575px) {
   .My-about {
-    display: none;
+    display:  none; 
+    width: 100%;
+    margin: 0 0 20px;
+    padding: 15px;
   }
   .Details-about {
-    padding-right: 1rem !important;
-    padding-top: 0rem !important;
-    padding-bottom: 4rem !important;
+    padding-left:35px;
+    padding-right: 35px;
+    padding-bottom: 3rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
-.social-one, .social-two, .social-three, .social-four {
-  margin-right: 1px!important;
+  /* Adjust social icons for mobile */
+  .social-one, .social-two, .social-three, .social-four {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .social-one a, .social-two a, .social-three a, .social-four a {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .icon {
+    font-size: 1.5rem;
+  }
+  /* Ensure social icons are centered on mobile */
+  ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
-
-
-}
-
-/* Responsive Mode for screens wider than or equal to 992px (desktops) */
-@media (min-width: 992px) {
+/* Small devices (576px - 767px) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .My-about {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
   .Details-about {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 4rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+  }
+}
+/* Medium devices (768px - 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .My-about {
+    width: 45%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 20px;
+  }
+  .Details-about {
+    width: 50%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 5rem;
+    max-width: 100%;
+  }
+}
+/* Large devices (992px - 1199px) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .My-about {
+    width: 40%;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 25px;
+  }
+  .Details-about {
+    width: 55%;
     padding-left: 2rem;
-    padding-bottom: 8rem !important;
+    padding-right: 2rem;
+    padding-bottom: 6rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
+}
+/* Extra large devices (1200px and up) */
+@media only screen and (min-width: 1200px) {
   .My-about {
-    margin-left: 1350px !important;
-    margin-right: 110px !important;
+    width: 30%;
+    margin-left: calc(70% - 2rem); /* Dynamic calculation instead of fixed value */
+    margin-right: 2rem;
+    flex: 0 0 auto;
+    padding:30px;
+  }
+  
+  .Details-about {
+    width: 65%;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 7rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    flex: 1 0 auto;
   }
 }

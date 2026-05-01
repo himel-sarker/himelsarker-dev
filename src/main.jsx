@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import ReactDOM from 'react-dom/client';
+import Popup from './components/Header/Popup.jsx'; // ✅ Import Popup instead of App
+//import './styles/globals.css'; // Import global styles
+//import './styles/variables.css'; // Import CSS variables
 
-
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <Popup /> {/* ✅ Render Popup instead of App */}
+  </React.StrictMode>
 );

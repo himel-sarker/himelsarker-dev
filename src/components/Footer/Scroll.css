@@ -1,0 +1,85 @@
+/* Scroll.css */
+/* Scroll container styles */
+.scroll-container {
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  transition: all 0.3s ease;
+  max-height: 400px; /* Set a max height for the scrollable area */
+}
+
+/* Hide scrollbar by default */
+.scroll-container::-webkit-scrollbar {
+  display: none;
+  width: 8px;
+}
+
+/* Show scrollbar when activated */
+.scroll-container.show-scrollbar {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 #f1f1f1; /* thumb and track */
+}
+
+.scroll-container.show-scrollbar::-webkit-scrollbar {
+  display: block;
+}
+
+/* Track styling */
+.scroll-container.show-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Thumb styling */
+.scroll-container.show-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+/* Thumb hover effect */
+.scroll-container.show-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Scroll to top button styles */
+.scroll-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #008000;
+  border: none;
+  border-radius: 70% 30% 81% 19% / 77% 66% 34% 23%  ;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.scroll-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-btn:hover {
+  background-color: #196901;
+}
+
+.scroll-btn svg {
+  color: white;
+  font-size: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}

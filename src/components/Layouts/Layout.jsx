@@ -8,19 +8,21 @@ import "../Header/Header.css";
 import Footer from "../Footer/Footer";
 import "../Footer/Footer.css";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import "./Layout.css"; // Import layout-specific styles
 
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="layout-container">
       <Topbar />
       <Header />
-      {children}
+      <main className="main-content">
+        {children}
+      </main>
       <Footer />
     </div>
   );
 };
 
 export default Layout;
-

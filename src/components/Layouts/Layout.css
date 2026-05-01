@@ -1,0 +1,10 @@
+/* src/components/Layouts/Layout.css */
+
+.layout-container {
+    position: relative;
+  }
+  
+  .main-content {
+    padding-top: 0px; /* Ensure content starts below fixed headers */
+  }
+  
