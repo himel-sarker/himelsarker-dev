@@ -93,8 +93,9 @@ const ContactUs = () => {
         // ==========================================
         // STEP 2: Send to Backend for Gmail (NEW CODE)
         // ==========================================
-        // We use import.meta.env.VITE_BACKEND_URL for production, fallback to localhost for testing
-        const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:3001';
+        
+        const backendUrl = '/.netlify/functions/contact';
+
         
         try {
           const response = await fetch(`${backendUrl}/contact`, {
