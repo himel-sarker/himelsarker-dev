@@ -98,7 +98,7 @@ const ContactUs = () => {
 
         
         try {
-          const response = await fetch(`${backendUrl}/contact`, {
+            const response = await fetch(backendUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
