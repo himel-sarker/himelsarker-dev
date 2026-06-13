@@ -3,3 +3,6 @@ backend/.env
 
 # Backend node modules (don't upload to GitHub)
 backend/node_modules
+
+# Local Netlify folder
+.netlify
