@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Link from "@mui/material/Link";
+import MuiLink from "@mui/material/Link"; 
+import { Link as RouterLink } from "react-router-dom"; // Added React Router Link
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { FaHome, FaInfo, FaTools, FaProjectDiagram } from "react-icons/fa";
 import Box from "@mui/material/Box";
@@ -28,8 +29,8 @@ const itemData = [
     title: "TO-DO-List",
   },
   {
-    img: "/assets/home.png",
-    title: "Storage Project",
+    img: "/assets/ERP.png",
+    title: "First-ERP-System-Project",
   },
   {
     img: "/assets/Fligh.jpg",
@@ -71,13 +72,14 @@ const MasonryImageList = () => {
     const liveDemoUrls = {
       "Flight-Booking": "https://himel-sarker.github.io/Flight-Booking/",
       "TO-DO-List": "https://himel-sarker.github.io/TO-DO-List/",
+      "First-ERP-System-Project": "https://github.com/himel-sarker/FirstErpSystem", 
       "Airtravel-Site": "https://himel-sarker.github.io/Airtravel-Site/",
       "Chinese-restaurant": "https://himel-sarker.github.io/Mod5_Assignmnet/",
       "Meal-Tracker": "https://six-star-mass.netlify.app/",
     };
     const liveDemoUrl = liveDemoUrls[title];
     if (liveDemoUrl) {
-      window.location.href = liveDemoUrl;
+      window.open(liveDemoUrl, "_blank", "noopener,noreferrer");
     } else {
       alert(`No live demo available for project: ${title}`);
     }
@@ -106,7 +108,7 @@ const MasonryImageList = () => {
       >
         {itemData.map((item, index) => (
           <ImageListItem 
-            key={item.img} 
+            key={index} // <--- এখানে item.img এর বদলে index দেওয়া হয়েছে
             className="image-list-item"
             style={{
               transform: isMounted ? 'translateY(0)' : 'translateY(-40px)',
@@ -155,58 +157,62 @@ const Project = () => {
       }}
     >
       <Breadcrumbs className="project-breadcrumbs" aria-label="breadcrumb">
-        <Link
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/home"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "green",
             fontWeight: "bold",
           }}
-          href="/home"
         >
           <FaHome className="mr-0.5" />
           HOME
-        </Link>
-        <Link
+        </MuiLink>
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/about"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "green",
             fontWeight: "bold",
           }}
-          href="/about"
         >
           <FaInfo className="mr-0.5" />
           About
-        </Link>
-        <Link
+        </MuiLink>
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/skills"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "green",
             fontWeight: "bold",
           }}
-          href="/skills"
         >
           <FaTools className="mr-0.5" />
           Skills
-        </Link>
-        <Link
+        </MuiLink>
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/projects"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "lightgreen",
             fontWeight: "bold",
           }}
-          href="/projects"
         >
           <FaProjectDiagram className="mr-0.5" />
           Projects
-        </Link>
+        </MuiLink>
       </Breadcrumbs>
       <div className="project-content">
         <div className="project-image">

@@ -1,5 +1,6 @@
 import React from "react";
-import Link from "@mui/material/Link";
+import MuiLink from "@mui/material/Link"; 
+import { Link as RouterLink } from "react-router-dom"; // Added React Router Link
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import { FaHome, FaInfo } from "react-icons/fa";
 
@@ -7,32 +8,34 @@ const AboutUs = () => {
   return (
     <div className="about-container ">
       <Breadcrumbs className="AboutBred" aria-label="breadcrumb">
-        <Link
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/home"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "green",
             fontWeight: "bold",
           }}
-          href="/home"
         >
           <FaHome className="mr-0.5" />
           HOME
-        </Link>
-        <Link
+        </MuiLink>
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/about"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "lightgreen",
             fontWeight: "bold",
           }}
-          href="/about"
         >
           <FaInfo className="mr-0.5" />
           About
-        </Link>
+        </MuiLink>
       </Breadcrumbs>
 
       <div className="My-about ">
@@ -57,8 +60,7 @@ const AboutUs = () => {
           (+880) 1795-114407 <br />
           <a href="mailto:himelsarker.softdev@gmail.com" className="email-link">
                  himelsarker.softdev@gmail.com
-            </a>
-
+          </a>
         </div>
         <p className="lead mb-5">
           I am experienced in leveraging agile frameworks to provide a robust
@@ -69,8 +71,6 @@ const AboutUs = () => {
         <br />
         <div className="social-item">
           <ul>
-            
-
             <li className="social-one">
               <a href="https://www.linkedin.com/in/himel-sarker/">
                 <i className="icon fab fa-linkedin-in"> </i>

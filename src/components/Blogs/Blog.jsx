@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import MuiLink from "@mui/material/Link"; // MUI Link
+import { Link as RouterLink } from "react-router-dom"; // React Router Link
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Typography from "@mui/material/Typography";
 
@@ -49,79 +50,84 @@ const Blog = () => {
       <div className="Blog-container">
         <Breadcrumbs className="BlogBred" aria-label="breadcrumb">
           {/* Home Link */}
-          <Link
+          <MuiLink
             underline="hover"
+            component={RouterLink}
+            to="/home"
             style={{
               display: "flex",
               alignItems: "center",
               color: "green",
               fontWeight: "bold",
             }}
-            href="/home"
           >
             <FaHome className="mr-0.5" />
             HOME
-          </Link>
+          </MuiLink>
 
           {/* About Link */}
-          <Link
+          <MuiLink
             underline="hover"
+            component={RouterLink}
+            to="/about"
             style={{
               display: "flex",
               alignItems: "center",
               color: "green",
               fontWeight: "bold",
             }}
-            href="/about"
           >
             <FaInfo className="mr-0.5" />
             About
-          </Link>
+          </MuiLink>
 
           {/* Skills Link */}
-          <Link
+          <MuiLink
             underline="hover"
+            component={RouterLink}
+            to="/skills"
             style={{
               display: "flex",
               alignItems: "center",
               color: "green",
               fontWeight: "bold",
             }}
-            href="/skills"
           >
             <FaTools className="mr-0.5" />
             Skills
-          </Link>
+          </MuiLink>
 
           {/* Projects Link */}
-          <Link
+          <MuiLink
             underline="hover"
+            component={RouterLink}
+            to="/projects"
             style={{
               display: "flex",
               alignItems: "center",
               color: "green",
               fontWeight: "bold",
             }}
-            href="/projects"
           >
             <FaProjectDiagram className="mr-0.5" />
             Projects
-          </Link>
+          </MuiLink>
 
           {/* Blogs Link */}
-          <Link
+          <MuiLink
             underline="hover"
+            component={RouterLink}
+            to="/blogs"
             style={{
               display: "flex",
               alignItems: "center",
               color: "lightgreen",
               fontWeight: "bold",
             }}
-            href="/blogs"
           >
             <FaBookOpen className="mr-0.5" />
             Blogs
-          </Link>
+          </MuiLink>
         </Breadcrumbs>
 
         {/* Blog Content */}
@@ -131,6 +137,7 @@ const Blog = () => {
               My&nbsp; <strong style={{ color: "green" }}> Latest Blogs</strong>
             </h1>
           </div>
+          
           {/* First Article */}
           <div className="Blog-One">
             <div className="row">
@@ -139,7 +146,7 @@ const Blog = () => {
                   <img
                     src="/assets/API&SQL.png"
                     alt=""
-                    className="img-fluid blog-image" // Added class "blog-image"
+                    className="img-fluid blog-image"
                   />
                 </div>
               </div>
@@ -152,16 +159,18 @@ const Blog = () => {
                   <Typography variant="h6" gutterBottom>
                     Features
                   </Typography>
-                  <Typography paragraph>
+                  {/* component="div" added to fix DOM nesting error */}
+                  <Typography component="div" paragraph>
                    A professional ASP.NET developer must think in two dimensions at the same time:
                    How the API behaves & How SQL Server executes the request.This article explains ERP-focused optimization techniques, showing both ASP.NET and SQL Server perspectives together, with real code examples.&nbsp;
                     <button
                       onClick={() =>
-                        (window.location.href =
-                          "https://medium.com/@himelsarker/optimizing-asp-net-web-apis-for-real-time-erp-systems-with-practical-examples-2d848b27f779")
+                        window.open(
+                          "https://medium.com/@himelsarker/optimizing-asp-net-web-apis-for-real-time-erp-systems-with-practical-examples-2d848b27f779",
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
                       }
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       Read more...
                     </button>
@@ -179,7 +188,7 @@ const Blog = () => {
                   <img
                     src="/assets/Meh2.png"
                     alt=""
-                    className="img-fluid blog-image" // Added class "blog-image"
+                    className="img-fluid blog-image"
                   />
                 </div>
               </div>
@@ -191,7 +200,8 @@ const Blog = () => {
                   <Typography variant="h6" gutterBottom>
                     Features
                   </Typography>
-                  <Typography paragraph>
+                  {/* component="div" added to fix DOM nesting error */}
+                  <Typography component="div" paragraph>
                     What is JavaScript? JavaScript is a scripting or programming
                     language that allows you to implement complex features on
                     web pages. JavaScript can update and change both HTML and
@@ -199,11 +209,12 @@ const Blog = () => {
                     data.&nbsp;
                     <button
                       onClick={() =>
-                        (window.location.href =
-                          "https://medium.com/@himelsarker85/some-important-method-of-javascript-7db5c95bd9e4")
+                        window.open(
+                          "https://medium.com/@himelsarker85/some-important-method-of-javascript-7db5c95bd9e4",
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
                       }
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       Read more...
                     </button>
@@ -221,7 +232,7 @@ const Blog = () => {
                   <img
                     src="/assets/reactJS3.png"
                     alt=""
-                    className="img-fluid blog-image" // Added class "blog-image"
+                    className="img-fluid blog-image"
                   />
                 </div>
               </div>
@@ -234,7 +245,8 @@ const Blog = () => {
                   <Typography variant="h6" gutterBottom>
                     Features
                   </Typography>
-                  <Typography paragraph>
+                  {/* component="div" added to fix DOM nesting error */}
+                  <Typography component="div" paragraph>
                     React React is a javascript library for building UI. It is a
                     declarative, efficient, and flexible javascript library.
                     Every react application build depends on components. It’s
@@ -242,11 +254,12 @@ const Blog = () => {
                     depends on elements’ behaviors.&nbsp;
                     <button
                       onClick={() =>
-                        (window.location.href =
-                          "https://medium.com/@himelsarker85/introduction-to-react-js-2624f8bbd3c7")
+                        window.open(
+                          "https://medium.com/@himelsarker85/introduction-to-react-js-2624f8bbd3c7",
+                          "_blank",
+                          "noopener,noreferrer"
+                        )
                       }
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       Read more...
                     </button>
@@ -257,51 +270,53 @@ const Blog = () => {
           </div>
 
          {/* Fourth Article */}
-     <div className="Blog-Four">
-      <div className="row">
-        <div className="col-md-6 order-md-1">
-          <div className="article-content">
-            <Typography variant="h4" gutterBottom>
-              4. SQL Basics…!
-            </Typography>
-            <Typography variant="h6" gutterBottom>
-              Features
-            </Typography>
-            <Typography paragraph>
-              SQL Basics Cheat Sheet…! What is SQL?
-              <br />
-              SQL (Structured Query Language) is the standard language for
-              managing relational databases.
-            </Typography>
-            <button
-              onClick={() =>
-                (window.location.href =
-                  "https://medium.com/@himelsarker85/sql-basics-cheat-sheet-75cd9d3aa6e4")
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Read more...
-            </button>
-          </div>
-        </div>
+          <div className="Blog-Four">
+            <div className="row">
+              <div className="col-md-6 order-md-1">
+                <div className="article-content">
+                  <Typography variant="h4" gutterBottom>
+                    4. SQL Basics…!
+                  </Typography>
+                  <Typography variant="h6" gutterBottom>
+                    Features
+                  </Typography>
+                  <Typography paragraph>
+                    SQL Basics Cheat Sheet…! What is SQL?
+                    <br />
+                    SQL (Structured Query Language) is the standard language for
+                    managing relational databases.
+                  </Typography>
+                  <button
+                    onClick={() =>
+                      window.open(
+                        "https://medium.com/@himelsarker85/sql-basics-cheat-sheet-75cd9d3aa6e4",
+                        "_blank",
+                        "noopener,noreferrer"
+                      )
+                    }
+                  >
+                    Read more...
+                  </button>
+                </div>
+              </div>
 
-        {/* Image second (visually on the right) */}
-        <div className="col-md-6 order-md-2">
-          <div className="imgFour">
-            <img
-              src="/assets/SQL.png"
-              alt="SQL Basics"
-              className="img-fluid blog-image"
-            />
+              {/* Image second (visually on the right) */}
+              <div className="col-md-6 order-md-2">
+                <div className="imgFour">
+                  <img
+                    src="/assets/SQL.png"
+                    alt="SQL Basics"
+                    className="img-fluid blog-image"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      </div>
+          
         </div>
       </div>
     </div>
-      </div>
+    </div>
   );
 };
 

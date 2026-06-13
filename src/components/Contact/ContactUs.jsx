@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import Link from "@mui/material/Link";
+import MuiLink from "@mui/material/Link"; 
+import { Link as RouterLink } from "react-router-dom"; // Added React Router Link
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import {
   FaHome,
   FaInfo,
   FaTools,
   FaProjectDiagram,
+  FaBookOpen, // Added missing import
   FaEnvelope,
 } from "react-icons/fa";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
@@ -104,12 +106,10 @@ const ContactUs = () => {
           
           if (response.ok) {
             console.log("✅ Email notification sent to Gmail!");
-            // ONLY show success if BOTH Firebase AND Email work
             toast.success("Message sent successfully!", { position: "top-center" });
             setFormData({ name: "", email: "", subject: "", message: "" });
           } else {
             console.warn("⚠️ Backend responded with an error.");
-            // Show a warning if Firebase saved, but email failed
             toast.warn("Message saved, but email notification failed.", { position: "top-center" });
           }
         } catch (emailError) {
@@ -142,21 +142,26 @@ const ContactUs = () => {
   return (
     <div className="contact-container">
       <Breadcrumbs className="contactBred" aria-label="breadcrumb">
-        <Link underline="hover" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }} href="/home">
+        <MuiLink underline="hover" component={RouterLink} to="/home" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }}>
           <FaHome className="mr-0.5" /> HOME
-        </Link>
-        <Link underline="hover" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }} href="/about">
+        </MuiLink>
+        <MuiLink underline="hover" component={RouterLink} to="/about" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }}>
           <FaInfo className="mr-0.5" /> About
-        </Link>
-        <Link underline="hover" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }} href="/skills">
+        </MuiLink>
+        <MuiLink underline="hover" component={RouterLink} to="/skills" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }}>
           <FaTools className="mr-0.5" /> Skills
-        </Link>
-        <Link underline="hover" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }} href="/projects">
+        </MuiLink>
+        <MuiLink underline="hover" component={RouterLink} to="/projects" sx={{ display: "flex", alignItems: "center", color: "green", fontWeight: "bold" }}>
           <FaProjectDiagram className="mr-0.5" /> Projects
-        </Link>
-        <Link underline="hover" sx={{ display: "flex", alignItems: "center", color: showContent ? "lightgreen" : "green", fontWeight: "bold" }} href="/contact">
+        </MuiLink>
+        {/* Blogs Link */}
+        <MuiLink underline="hover" component={RouterLink} to="/blogs" style={{display: "flex",alignItems: "center",color: "green",fontWeight: "bold",}}>
+          <FaBookOpen className="mr-0.5" />
+          Blogs
+        </MuiLink>
+        <MuiLink underline="hover" component={RouterLink} to="/contact" sx={{ display: "flex", alignItems: "center", color: showContent ? "lightgreen" : "green", fontWeight: "bold" }}>
           <FaEnvelope className="mr-0.5" /> Contact Us
-        </Link>
+        </MuiLink>
       </Breadcrumbs>
       
       <div className="Contact-content">

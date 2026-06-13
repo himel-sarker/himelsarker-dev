@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Link from "@mui/material/Link";
+import MuiLink from "@mui/material/Link"; 
+import { Link as RouterLink } from "react-router-dom"; // Added React Router Link
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import LinearProgress from "@mui/material/LinearProgress";
 import Button from "@mui/material/Button";
@@ -76,45 +77,48 @@ function Skill() {
     
     <div className="Skill-Container">
       <Breadcrumbs className="AboutBred" aria-label="breadcrumb">
-        <Link
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/home"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "green",
             fontWeight: "bold",
           }}
-          href="/home"
         >
           <FaHome className="mr-0.5" />
           HOME
-        </Link>
-        <Link
+        </MuiLink>
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/about"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "green",
             fontWeight: "bold",
           }}
-          href="/about"
         >
           <FaInfo className="mr-0.5" />
           About
-        </Link>
-        <Link
+        </MuiLink>
+        <MuiLink
           underline="hover"
+          component={RouterLink}
+          to="/skills"
           sx={{
             display: "flex",
             alignItems: "center",
             color: "lightgreen",
             fontWeight: "bold",
           }}
-          href="/skills"
         >
           <FaTools className="mr-0.5" />
           Skills
-        </Link>
+        </MuiLink>
       </Breadcrumbs>
 
       <div className="skill-name">
@@ -126,8 +130,9 @@ function Skill() {
       <div className="heading-three">
       <div className="subheading mb-3">Programming Languages &amp; Tools</div>
       <div className="skills-container">
+        {/* <li> এর বদলে <span> ব্যবহার করা হয়েছে DOM error এড়াতে */}
         <div className="skill">
-          <li>HTML5</li>
+          <span>HTML5</span>
           <LinearProgress
             variant="determinate"
             value={100}
@@ -135,7 +140,7 @@ function Skill() {
           />
         </div>
         <div className="skill">
-          <li>CSS3</li>
+          <span>CSS3</span>
           <LinearProgress
             variant="determinate"
             value={100}
@@ -143,7 +148,7 @@ function Skill() {
           />
         </div>
         <div className="skill">
-          <li>JavaScript</li>
+          <span>JavaScript</span>
           <LinearProgress
             variant="determinate"
             value={65}
@@ -152,7 +157,7 @@ function Skill() {
         </div>
 
         <div className="skill">
-          <li>C#</li>
+          <span>C#</span>
           <LinearProgress
             variant="determinate"
             value={60}
@@ -160,7 +165,7 @@ function Skill() {
           />
         </div>
         <div className="skill">
-          <li>React.js </li>
+          <span>React.js </span>
           <LinearProgress
             variant="determinate"
             value={59}
@@ -168,7 +173,7 @@ function Skill() {
           />
         </div>
         <div className="skill">
-          <li>Node.js</li>
+          <span>Node.js</span>
           <LinearProgress
             variant="determinate"
             value={55}
@@ -176,7 +181,7 @@ function Skill() {
           />
         </div>
         <div className="skill">
-          <li>PHP</li>
+          <span>PHP</span>
           <LinearProgress
             variant="determinate"
             value={65}
@@ -184,7 +189,7 @@ function Skill() {
           />
         </div>
         <div className="skill">
-          <li>Laravel</li>
+          <span>Laravel</span>
           <LinearProgress
             variant="determinate"
             value={60}
@@ -224,57 +229,54 @@ function Skill() {
       
 
       <div className="GD-media">
-  <ul className="list-inline">
-    <li className="Button1">
-      <Button
-        component="a"
-        onClick={() =>
-          (window.location.href = "https://github.com/himel-sarker")
-        }
-        target="_blank"
-        startIcon={<FaHome />}  // <-- Icon before text
-      >
-        GitHub
-      </Button>
-    </li>
-    <li className="Button2">
-      <Button
-        component="a"
-        onClick={() =>
-          (window.location.href =
-            "https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view")
-        }
-        target="_blank"
-        startIcon={<FaHtml5 />} // <-- Icon before text
-      >
-        Download CV
-      </Button>
-    </li>
-  </ul>
-</div>
+        <ul className="list-inline">
+          <li className="Button1">
+            {/* MUI Button এ সরাসরি href ব্যবহার করা হয়েছে */}
+            <Button
+              href="https://github.com/himel-sarker"
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<FaHome />}
+            >
+              GitHub
+            </Button>
+          </li>
+          <li className="Button2">
+            {/* MUI Button এ সরাসরি href ব্যবহার করা হয়েছে */}
+            <Button
+              href="https://drive.google.com/file/d/1C2oBG6MGsl6WWAzbOAY9daaL_txSju5c/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              startIcon={<FaHtml5 />}
+            >
+              Download CV
+            </Button>
+          </li>
+        </ul>
+      </div>
 
 
- <div class="fields-container">
-  <h2>Interested Fields</h2>
-  <ul class="fields-list">
-    <li class="fields-list-item">
-      <span class="list-item-icon">✓</span>
-      <span>Web Development</span>
-    </li>
-    <li class="fields-list-item">
-      <span class="list-item-icon">✓</span>
-      <span>Artificial Intelligence & Machine Learning</span>
-    </li>
-    <li class="fields-list-item">
-      <span class="list-item-icon">✓</span>
-      <span>Cloud Computing & DevOps</span>
-    </li>
-    <li class="fields-list-item">
-      <span class="list-item-icon">✓</span>
-      <span>Cybersecurity & Data Privacy</span>
-    </li>
-  </ul>
-</div>
+      <div className="fields-container">
+        <h2>Interested Fields</h2>
+        <ul className="fields-list">
+          <li className="fields-list-item">
+            <span className="list-item-icon">✓</span>
+            <span>Web Development</span>
+          </li>
+          <li className="fields-list-item">
+            <span className="list-item-icon">✓</span>
+            <span>Artificial Intelligence & Machine Learning</span>
+          </li>
+          <li className="fields-list-item">
+            <span className="list-item-icon">✓</span>
+            <span>Cloud Computing & DevOps</span>
+          </li>
+          <li className="fields-list-item">
+            <span className="list-item-icon">✓</span>
+            <span>Cybersecurity & Data Privacy</span>
+          </li>
+        </ul>
+      </div>
 
   </div>
      
