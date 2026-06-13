@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+const nodemailer = require('nodemailer'); // Fixed back to require!
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -62,7 +62,7 @@ const handler = async (event) => {
             
             <!-- Message Box -->
             <div style="background-color: #f9f9f9; border-left: 4px solid #4caf50; padding: 15px; border-radius: 4px;">
-              <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #444;">${message.replace(/\n/g, '<br>')}</p>
+              <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #444;">${String(message).replace(/\n/g, '<br>')}</p>
             </div>
             
           </div>
@@ -81,8 +81,8 @@ const handler = async (event) => {
       to: process.env.EMAIL_USER,
       replyTo: email,
       subject: `Portfolio Contact: ${subject}`,
-      text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`, // Fallback for plain text clients
-      html: htmlTemplate, // 👈 THE NEW PROFESSIONAL HTML
+      text: `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`, 
+      html: htmlTemplate, 
     };
 
     await transporter.sendMail(mailOptions);
@@ -95,4 +95,4 @@ const handler = async (event) => {
   }
 };
 
-export { handler };
+module.exports = { handler }; // Fixed back to module.exports!
