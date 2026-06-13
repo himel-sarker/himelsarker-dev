@@ -120,7 +120,6 @@ const ContactUs = () => {
         // ==========================================
         // STEP 3: Success UI
         // ==========================================
-        toast.success("Message sent successfully!", { position: "top-center" });
         setFormData({
           name: "",
           email: "",
