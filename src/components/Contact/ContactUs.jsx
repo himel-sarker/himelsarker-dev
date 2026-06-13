@@ -91,29 +91,30 @@ const ContactUs = () => {
         console.log("✅ Document written with ID: ", docRef.id);
 
         // ==========================================
-        // STEP 2: Send to Backend for Gmail (NEW CODE)
+        // STEP 2: Send to Backend for Gmail
         // ==========================================
-        
         const backendUrl = '/.netlify/functions/contact';
-
         
         try {
             const response = await fetch(backendUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData)
-          });
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData)
+            });
           
           if (response.ok) {
             console.log("✅ Email notification sent to Gmail!");
+            // ONLY show success if BOTH Firebase AND Email work
+            toast.success("Message sent successfully!", { position: "top-center" });
+            setFormData({ name: "", email: "", subject: "", message: "" });
           } else {
             console.warn("⚠️ Backend responded with an error.");
+            // Show a warning if Firebase saved, but email failed
+            toast.warn("Message saved, but email notification failed.", { position: "top-center" });
           }
         } catch (emailError) {
-          // We DON'T throw an error here. We just log it.
-          // Why? Because the message is already safe in Firebase. 
-          // We don't want to show the user an error if only the Gmail part failed.
           console.error("⚠️ Saved to Firebase, but Gmail notification failed:", emailError);
+          toast.warn("Message saved, but email notification failed.", { position: "top-center" });
         }
 
         // ==========================================
